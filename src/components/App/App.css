@@ -1,4 +1,20 @@
-.navbar-custom {
+body a {
+	color: white;
+}
+body a:hover {
+	color: white;
+}
+.header {
+	height: 50px;
+	width: 100%;
 	background-color: #396a9f;
-	border-color: #396a9f;
+	display: flex;
+	justify-content: space-around;
+	color: white;
+}
+.header a {
+	color: white;
+}
+.header a,.header div{
+	padding-top: 10px; 
 }

@@ -14,21 +14,11 @@ class App extends Component {
   render () {
     return (
       <div>
-        <Navbar className='navbar-custom'>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <Link to='/'> Logo</Link>
-            </Navbar.Brand>
-            <Navbar.Toggle />
-          </Navbar.Header>
-          <Navbar.Collapse>
-            <Nav navbar className='navbar-right'>
-              <LinkContainer to='/counters'>
-                <NavItem>back</NavItem>
-              </LinkContainer>
-            </Nav>
-          </Navbar.Collapse>
-        </Navbar>
+        <div className='header'>
+          <Link to='/'> Logo</Link>
+          <div>We make fast Google AMP pages</div>
+          <div>back</div>
+        </div>
         <Grid>
           {this.props.children}
         </Grid>

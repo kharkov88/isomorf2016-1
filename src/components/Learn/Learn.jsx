@@ -5,23 +5,16 @@ import './Learn.css'
 
 class Learn extends React.Component {
   componentDidMount () {
-    let htmlCollection = document.querySelectorAll('.learn-item')
-    htmlCollection.forEach( item => {
-      item.addEventListener('transitionend', function () {
-        console.log(this)
-        this.parentNode.removeChild(this)
-      })      
+    this.setState({
+      animate:true
     })
-
-    htmlCollection.forEach( item => {
-      item.style.opacity = 0
-    })
+    setTimeout(() => {
+      this.setState({
+        animate: false
+      })
+    }, 1100)
   }
   componentWillUnmount () {
-    let htmlCollection = document.querySelectorAll('.learn-item')
-    htmlCollection.forEach( item => {
-      //item.style.right = 0
-    })
   }
   constructor (props) {
     super(props)
@@ -34,16 +27,16 @@ class Learn extends React.Component {
     {
       if (this.state.animate) {
         return (
-          <div>animate</div>
+          <div className='learn-block'>
+            <div className='learn-item'>link1</div>
+            <div className='learn-item'>link2</div>
+            <div className='learn-item'>link3</div>
+          </div>
         )
       } else {
         return (
           <div className='learn'>
-            <div className='learn-page'><h2>content learn</h2></div>
-            <div className='learn-item'>link1</div>
-            <div className='learn-item'>link2</div>
-            <div className='learn-item'>link3</div>
-            
+            <div className='learn-page'><h2>content learn</h2></div>            
           </div>
         )
       }

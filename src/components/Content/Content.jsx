@@ -15,10 +15,20 @@ class Content extends Component {
   render () {
     return (
       <div className='content'>
-        <Link to='learn'>learn</Link>
-        <Link to='order'>order</Link>
-        <Link to='for-free'>for-free</Link>
-        <Link to='contact-us'>contact-us</Link>
+        <div><h1>We make fast Google AMP pages</h1></div>
+        <div className='content-text'>
+          <ul>
+            <li>Extend your web presence by adding AMP</li>
+            <li>Get higher speed web content</li>
+            <li>Obtain privileged view in Google search</li>
+          </ul>
+        </div>
+        <div className='content-links'>
+          <Link to='learn'>learn</Link>
+          <Link to='order'>order</Link>
+          <Link to='for-free'>for-free</Link>
+          <Link to='contact-us'>contact-us</Link>
+        </div>
       </div>
     )
   }
