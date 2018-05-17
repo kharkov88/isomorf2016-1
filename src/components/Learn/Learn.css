@@ -11,7 +11,12 @@
 	top: 0;
 
 }
+.learn-item {
+	transition-property: opacity;
+	transition-duration: 2s; 
+}
 .learn div {
+	position: relative;
 	height: 100px;
 	width: 25%;
 	border: 1px solid black;
