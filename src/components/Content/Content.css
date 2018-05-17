@@ -1,0 +1,13 @@
+.content {
+	height: 300px;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	padding: 15% 0 0 0;
+}
+.content a {
+	text-align: center;
+	width: 150px;
+	height: 100px;
+	border: 1px solid black;
+}

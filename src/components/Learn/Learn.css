@@ -1,0 +1,18 @@
+.learn {
+	height: 300px;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	padding: 15% 0 0 0;
+}
+.learn-page {
+	position: relative;
+	left: 0;
+	top: 0;
+
+}
+.learn div {
+	height: 100px;
+	width: 25%;
+	border: 1px solid black;
+}

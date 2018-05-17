@@ -5,27 +5,26 @@ import Grid from 'react-bootstrap/lib/Grid'
 import Nav from 'react-bootstrap/lib/Nav'
 import Navbar from 'react-bootstrap/lib/Navbar'
 import NavItem from 'react-bootstrap/lib/NavItem'
-import HelloWorldPage from 'components/HelloWorldPage'
+import Content from 'components/Content'
+import Footer from 'components/Footer'
 import './bootstrap.css'
+import './App.css'
 
 class App extends Component {
   render () {
     return (
       <div>
-        <Navbar>
+        <Navbar className='navbar-custom'>
           <Navbar.Header>
             <Navbar.Brand>
-              <Link to='/'> Hello World</Link>
+              <Link to='/'> Logo</Link>
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>
           <Navbar.Collapse>
-            <Nav navbar>
-              <LinkContainer to='/time'>
-                <NavItem>Время</NavItem>
-              </LinkContainer>
+            <Nav navbar className='navbar-right'>
               <LinkContainer to='/counters'>
-                <NavItem>Счетчики</NavItem>
+                <NavItem>back</NavItem>
               </LinkContainer>
             </Nav>
           </Navbar.Collapse>
@@ -33,6 +32,7 @@ class App extends Component {
         <Grid>
           {this.props.children}
         </Grid>
+        <Footer />
       </div>
     )
   }
