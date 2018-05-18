@@ -28,15 +28,14 @@ class Learn extends React.Component {
       if (this.state.animate) {
         return (
           <div className='learn-block'>
-            <div className='learn-item'>link1</div>
-            <div className='learn-item'>link2</div>
-            <div className='learn-item'>link3</div>
+              animation....
           </div>
         )
       } else {
         return (
           <div className='learn'>
-            <div className='learn-page'><h2>content learn</h2></div>            
+            <div><Link to='services'>services</Link></div>
+            <div><Link to='compare'>compare</Link></div>           
           </div>
         )
       }

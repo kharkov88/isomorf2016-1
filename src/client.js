@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { browserHistory, Router } from 'react-router'
+import { BrowserRouter } from 'react-router-dom'
 import routes from './routes'
 import { Provider } from 'react-redux'
 import configureStore from './redux/configureStore'
@@ -9,9 +9,9 @@ const store = configureStore()
 
 const component = (
   <Provider store={store}>
-    <Router history={browserHistory}>
+    <BrowserRouter>
       {routes}
-    </Router>
+    </BrowserRouter>
   </Provider>
 )
 

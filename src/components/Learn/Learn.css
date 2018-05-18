@@ -4,12 +4,10 @@
 	display: flex;
 	justify-content: space-around;
 	padding: 15% 0 0 0;
+	color: black;
 }
-.learn-page {
-	position: relative;
-	left: 0;
-	top: 0;
-
+.learn a {
+	color: black;
 }
 .learn-block {
 	display: flex;
