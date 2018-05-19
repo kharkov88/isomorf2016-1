@@ -1,10 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
-import LinkContainer from 'react-router-bootstrap/lib/LinkContainer'
-import Grid from 'react-bootstrap/lib/Grid'
-import Nav from 'react-bootstrap/lib/Nav'
-import Navbar from 'react-bootstrap/lib/Navbar'
-import NavItem from 'react-bootstrap/lib/NavItem'
+import { Link, Route } from 'react-router-dom'
 import Content from 'components/Content'
 import Footer from 'components/Footer'
 import './bootstrap.css'
@@ -13,19 +8,69 @@ import './App.css'
 class App extends Component {
   render () {
     return (
-      <div>
-        <div className='header'>
-          <Link to='/'> Logo</Link>
-          <div>We make fast Google AMP pages</div>
-          <div>back</div>
-        </div>
-        <Grid>
-          {this.props.children}
-        </Grid>
-        <Footer />
-      </div>
+    <div>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/topics">Topics</Link>
+        </li>
+      </ul>
+
+      <hr />
+
+      <Route exact path="/" component={Home} />
+      <Route path="/about" component={About} />
+      <Route path="/topics" component={Topics} />
+    </div>
+
     )
   }
 }
+const Home = () => (
+  <div>
+    <h2>Home</h2>
+  </div>
+);
+
+const About = () => (
+  <div>
+    <h2>About</h2>
+  </div>
+);
+
+const Topics = ({ match }) => (
+  <div>
+    <h2>Topics</h2>
+    <ul>
+      <li>
+        <Link to={`${match.url}/rendering`}>Rendering with React</Link>
+      </li>
+      <li>
+        <Link to={`${match.url}/components`}>Components</Link>
+      </li>
+      <li>
+        <Link to={`${match.url}/props-v-state`}>Props v. State</Link>
+      </li>
+    </ul>
+
+    <Route path={`${match.url}/:topicId`} component={Topic} />
+    <Route
+      exact
+      path={match.url}
+      render={() => <h3>Please select a topic.</h3>}
+    />
+  </div>
+);
+
+const Topic = ({ match }) => (
+  <div>
+    <h3>{match.params.topicId}</h3>
+  </div>
+);
 
 export default App

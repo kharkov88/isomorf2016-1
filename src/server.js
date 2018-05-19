@@ -1,9 +1,8 @@
-
 import express from 'express'
 import React from 'react'
 import ReactDom from 'react-dom/server'
 import { StaticRouter } from 'react-router'
-import App from './routes'
+import App from 'components/App/App.jsx'
 import { Provider } from 'react-redux'
 import configureStore from './redux/configureStore'
 
@@ -11,37 +10,14 @@ const app = express()
 
 app.use(express.static(__dirname + '/'))
 app.use((req, res) => {
-  /*
-  match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
-    if (redirectLocation) {
-      return res.redirect(301, redirectLocation.pathname + redirectLocation.search)
-    }
-
-    if (error) {
-      return res.status(500).send(error.message)
-    }
-
-    if (!renderProps) {
-      return res.status(404).send('Not found page')
-    }
-    const store = configureStore()
-    const componentHTML = ReactDom.renderToString(
-      <Provider store={store}>
-        <RouterContext {...renderProps} />
-      </Provider>
-    )
-    return res.end(renderHTML(componentHTML))
-  })
-  */
-  const AppToHtml = ReactDom.renderToString(App)
-  console.log(AppToHtml)
   const context = {}
+
   const componentHTML = ReactDom.renderToString(
     <StaticRouter
       location={req.url}
       context={context}
     >
-      {AppToHtml}
+      <App />
     </StaticRouter>
   )
   res.end(renderHTML(componentHTML))
@@ -72,3 +48,26 @@ const PORT = process.env.PORT || 3003
 app.listen(PORT, () => {
   console.log(`Server listening on: ${PORT}`)
 })
+
+/*
+  match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
+    if (redirectLocation) {
+      return res.redirect(301, redirectLocation.pathname + redirectLocation.search)
+    }
+
+    if (error) {
+      return res.status(500).send(error.message)
+    }
+
+    if (!renderProps) {
+      return res.status(404).send('Not found page')
+    }
+    const store = configureStore()
+    const componentHTML = ReactDom.renderToString(
+      <Provider store={store}>
+        <RouterContext {...renderProps} />
+      </Provider>
+    )
+    return res.end(renderHTML(componentHTML))
+  })
+  */
