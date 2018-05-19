@@ -1,7 +1,13 @@
 import React, { PropTypes, Component } from 'react'
-import { Link } from 'react-router'
+import { Link, Route, Switch } from 'react-router-dom'
 
 import './Content.css'
+
+const About = () => (
+  <div>
+    <h2>About</h2>
+  </div>
+);
 
 class Content extends Component {
   componentWillUnmount () {
@@ -24,14 +30,16 @@ class Content extends Component {
           </ul>
         </div>
         <div className='content-links'>
-          <Link to='learn'>learn</Link>
-          <Link to='order'>order</Link>
-          <Link to='for-free'>for-free</Link>
-          <Link to='contact-us'>contact-us</Link>
+          <Link to='/learn'>learn</Link>
+          <Link to='/order'>order</Link>
+          <Link to='/for-free'>for-free</Link>
+          <Link to='/contact-us'>contact-us</Link>
         </div>
+
       </div>
     )
   }
 }
+
 
 export default Content

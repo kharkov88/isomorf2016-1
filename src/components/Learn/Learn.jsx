@@ -1,5 +1,5 @@
 import React, { PropTypes, Component } from 'react'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 
 import './Learn.css'
 
@@ -24,6 +24,7 @@ class Learn extends React.Component {
   }
 
   render () {
+    let {url} = this.props.match
     {
       if (this.state.animate) {
         return (
@@ -34,8 +35,8 @@ class Learn extends React.Component {
       } else {
         return (
           <div className='learn'>
-            <div><Link to='services'>services</Link></div>
-            <div><Link to='compare'>compare</Link></div>           
+            <div><Link to={url+'/services'}>services</Link></div>
+            <div><Link to={url+'/compare'}>compare</Link></div>           
           </div>
         )
       }
