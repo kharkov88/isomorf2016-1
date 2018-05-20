@@ -7,6 +7,7 @@ import { StaticRouter } from 'react-router'
 import { Provider } from 'react-redux'
 import configureStore from './redux/configureStore'
 import App from './components/App/App.jsx'
+import routes from './routes'
 
 const app = express()
 
@@ -18,7 +19,7 @@ app.use((req, res) => {
       location={req.url}
       context={context}
     >
-      <App />
+      {routes}
     </StaticRouter>
   )
   res.end(renderHTML(componentHTML))

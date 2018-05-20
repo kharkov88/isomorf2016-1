@@ -1,48 +1,26 @@
 import React from 'react'
-import { BrowserRouter, Route } from 'react-router'
+import { Route, Switch } from 'react-router-dom'
 import App from 'components/App'
-import CounterPage from 'components/CounterPage'
-import Content from 'components/Content'
-import Learn from 'components/Learn'
 
-const Services = () => (
-  <div>
-    <h2>services</h2>
-  </div>
+
+const Status = ({ code, children }) => (
+  <Route render={({ staticContext }) => {
+    if (staticContext) { staticContext.status = code }
+    return children
+  }} />
 )
-const Compare = () => (
-  <div>
-    <h2>compare</h2>
-  </div>
+
+const NotFound = () => (
+  <Status code={404}>
+    <div>
+      <h1>Sorry, can’t find that.</h1>
+    </div>
+  </Status>
 )
-const Order = () => (
-  <div>
-    <h2>order</h2>
-  </div>
-)
-const ForFree = () => (
-  <div>
-    <h2>for-free</h2>
-  </div>
-)
-const ContactUs = () => (
-  <div>
-    <h2>contact-us</h2>
-  </div>
-)
+
 export default (
-  <App/>
+  <Switch>
+    <Route path='/' component={App} />
+    <Route path='/:id' component={NotFound} />
+  </Switch>
 )
-/*
-  <Route path='/' component={App} >
-    <IndexRoute component={Content} />
-    <Route path='learn' component={Learn}>
-      <Route path='/learn/services' component={Services}></Route>
-      <Route path='/learn/compare' component={Compare}></Route> 
-    </Route>   
-    <Route path='order' component={Order} />
-    <Route path='for-free' component={ForFree} />
-    <Route path='contact-us' component={ContactUs} />
-    <Route path='counters' component={CounterPage} />
-  </Route>
-  */

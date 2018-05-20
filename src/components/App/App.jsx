@@ -8,6 +8,7 @@ import './App.css'
 
 class App extends Component {
   render () {
+    let {url} = this.props.match
     return (
       <div>
         <div className='header'>
@@ -15,29 +16,17 @@ class App extends Component {
           <div>We make fast Google AMP pages</div>
           <div>back</div>
         </div>
-        <Switch>
-          <Route exact path='/' component={Content} />
-          <Route path='/learn' component={Learn} />
-          <Route path='/order' component={Order} />
-          <Route path='/for-free' component={ForFree} />
-          <Route path='/contact-us' component={ContactUs} />
-          <Route path='/learn/services' component={Services} />
-        </Switch>
+          <Route exact path={url} component={Content} />
+          <Route path={`${url}learn`} component={Learn} />
+          <Route path={`${url}order`} component={Order} />
+          <Route path={`${url}for-free`} component={ForFree} />
+          <Route path={`${url}rcontact-us`} component={ContactUs} />
         <Footer/>
       </div>
     )
   }
 }
-const Services = () => (
-  <div>
-    <h2>services</h2>
-  </div>
-)
-const Compare = () => (
-  <div>
-    <h2>compare</h2>
-  </div>
-)
+
 const Order = () => (
   <div>
     <h2>order</h2>

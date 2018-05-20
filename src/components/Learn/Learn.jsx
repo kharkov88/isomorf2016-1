@@ -1,5 +1,5 @@
 import React, { PropTypes, Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
 
 import './Learn.css'
 
@@ -43,5 +43,21 @@ class Learn extends React.Component {
     }
   }
 }
+const Services = () => (
+  <div>
+    <h2>services</h2>
+  </div>
+)
+const Compare = () => (
+  <div>
+    <h2>compare</h2>
+  </div>
+)
 
-export default Learn
+export default ({match}) => (
+  <div>
+    <Route exact path={`${match.url}`} component={Learn}/>
+    <Route path={`${match.url}/services`} component={Services}/>
+    <Route path={`${match.url}/compare`} component={Compare}/>
+  </div>
+  )
