@@ -1,6 +1,5 @@
 import React, { PropTypes, Component } from 'react'
 import { Link, Route } from 'react-router-dom'
-
 import './Learn.css'
 
 class Learn extends React.Component {

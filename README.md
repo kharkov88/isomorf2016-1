@@ -3,9 +3,6 @@
 * redux
 * isomorphic / universal web-application
 * server-side rendering
-* authentication
-* omniauth
-* API
 * node.js
 
 ## Установка и запуск
@@ -21,4 +18,4 @@ npm run nodemon
 ```
 npm run webpack-devserver
 ```
-Приложение будет доступно по адресу http://localhost:3001
+Приложение будет доступно по адресу http://localhost:3003

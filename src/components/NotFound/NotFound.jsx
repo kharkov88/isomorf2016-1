@@ -1,7 +1,5 @@
 import React from 'react'
-import { Route, Switch } from 'react-router-dom'
-import App from 'components/App'
-
+import { Route } from 'react-router-dom'
 
 const Status = ({ code, children }) => (
   <Route render={({ staticContext }) => {
@@ -18,6 +16,4 @@ const NotFound = () => (
   </Status>
 )
 
-export default (
-  <App />
-)
+export default NotFound
