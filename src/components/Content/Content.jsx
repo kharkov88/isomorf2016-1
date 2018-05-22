@@ -11,7 +11,6 @@ const About = () => (
 
 class Content extends Component {
   componentWillUnmount () {
-    console.log('Content unmont, remove from memory..maybe')
   }
   constructor (props) {
     super(props)

@@ -11,7 +11,7 @@ class Learn extends React.Component {
       this.setState({
         animate: false
       })
-    }, 1100)
+    }, 300)
   }
   componentWillUnmount () {
   }

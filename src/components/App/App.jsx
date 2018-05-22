@@ -18,11 +18,14 @@ class App extends Component {
           <div>We make fast Google AMP pages</div>
           <div>back</div>
         </div>
-          <Route exact path={'/'} component={Content} />
-          <Route path={`/learn`} component={Learn} />
-          <Route path={`/order`} component={Order} />
-          <Route path={`/for-free`} component={ForFree} />
-          <Route path={`/contact-us`} component={ContactUs} />
+        <Switch>
+          <Route exact path='/' component={Content} />
+          <Route path='/learn' component={Learn} />
+          <Route path='/order' component={Order} />
+          <Route path='/for-free' component={ForFree} />
+          <Route path='/contact-us' component={ContactUs} />
+          <Route component={NotFound} />
+        </Switch>
         <Footer/>
       </div>
     )

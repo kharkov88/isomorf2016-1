@@ -2,11 +2,12 @@
 import express from 'express'
 import React from 'react'
 import ReactDom from 'react-dom/server'
-import { StaticRouter } from 'react-router'
+import { StaticRouter, Route, Switch } from 'react-router'
 
 import { Provider } from 'react-redux'
 import configureStore from './redux/configureStore'
 import App from './components/App/App.jsx'
+import NotFound from 'components/NotFound'
 import routes from './routes'
 
 const app = express()
