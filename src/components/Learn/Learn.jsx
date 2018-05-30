@@ -1,6 +1,5 @@
 import React, { PropTypes, Component } from 'react'
 import { Link, Route } from 'react-router-dom'
-
 import './Learn.css'
 
 class Learn extends React.Component {
@@ -12,7 +11,7 @@ class Learn extends React.Component {
       this.setState({
         animate: false
       })
-    }, 1100)
+    }, 300)
   }
   componentWillUnmount () {
   }
