@@ -7,7 +7,6 @@ import { StaticRouter, Route, Switch } from 'react-router'
 import { Provider } from 'react-redux'
 import configureStore from './redux/configureStore'
 import App from './components/App/App.jsx'
-import NotFound from 'components/NotFound'
 import routes from './routes'
 
 const app = express()
@@ -15,13 +14,16 @@ const app = express()
 app.use(express.static(__dirname + '/'))
 app.use((req, res) => {
   const context = {}
+  const store = configureStore()
   const componentHTML = ReactDom.renderToString(
-    <StaticRouter
-      location={req.url}
-      context={context}
-    >
-      {routes}
-    </StaticRouter>
+    <Provider store={store}>
+      <StaticRouter
+        location={req.url}
+        context={context}
+      >
+        {routes}
+      </StaticRouter>
+    </Provider>
   )
   res.end(renderHTML(componentHTML))
 })

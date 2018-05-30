@@ -5,7 +5,7 @@ import './Learn.css'
 class Learn extends React.Component {
   componentDidMount () {
     this.setState({
-      animate:true
+      animate: true
     })
     setTimeout(() => {
       this.setState({
@@ -34,8 +34,8 @@ class Learn extends React.Component {
       } else {
         return (
           <div className='learn'>
-            <div><Link to={url+'/services'}>services</Link></div>
-            <div><Link to={url+'/compare'}>compare</Link></div>           
+            <div><Link to={url + '/services'}>services</Link></div>
+            <div><Link to={url + '/compare'}>compare</Link></div>
           </div>
         )
       }
@@ -55,8 +55,8 @@ const Compare = () => (
 
 export default ({match}) => (
   <div>
-    <Route exact path={`${match.url}`} component={Learn}/>
-    <Route path={`${match.url}/services`} component={Services}/>
-    <Route path={`${match.url}/compare`} component={Compare}/>
+    <Route exact path={`${match.url}`} component={Learn} />
+    <Route path={`${match.url}/services`} component={Services} />
+    <Route path={`${match.url}/compare`} component={Compare} />
   </div>
-  )
+)

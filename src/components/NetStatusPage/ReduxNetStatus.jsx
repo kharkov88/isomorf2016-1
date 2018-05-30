@@ -1,29 +1,29 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Counter from './Counter'
-import { increment } from 'redux/actions/counter'
+import NetStatus from './NetStatus'
 import { changeNetStatus } from 'redux/actions/netStatus'
 
-class ReduxCounter extends Component {
+class ReduxNetStatus extends Component {
   constructor (props) {
     super(props)
+
     this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick () {
-  	this.props.dispatch(increment())
+    this.props.dispatch(changeNetStatus())
   }
 
   render () {
-  	return <Counter value={this.props.value} onClick={this.handleClick} />
+  	return <NetStatus value={this.props.online} onClick={this.handleClick} />
   }
 }
 
 function mapStateToProps (state) {
-  const { value } = state.counter
+  const { online } = state
   return {
-    value
+    online
   }
 }
 
-export default connect(mapStateToProps)(ReduxCounter)
+export default connect(mapStateToProps)(ReduxNetStatus)

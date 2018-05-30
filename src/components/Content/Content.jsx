@@ -7,7 +7,7 @@ const About = () => (
   <div>
     <h2>About</h2>
   </div>
-);
+)
 
 class Content extends Component {
   componentWillUnmount () {
@@ -39,6 +39,5 @@ class Content extends Component {
     )
   }
 }
-
 
 export default Content

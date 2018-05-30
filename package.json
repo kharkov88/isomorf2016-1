@@ -1,5 +1,5 @@
 {
-  "name": "habr-app",
+  "name": "mtcom-app",
   "version": "1.0.0",
   "description": "Simple universal React application",
   "main": "index.js",
@@ -17,6 +17,7 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
     "bluebird": "^3.4.1",
+    "classnames": "^2.2.5",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-redux": "^5.0.7",

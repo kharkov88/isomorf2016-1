@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import Button from 'react-bootstrap/lib/Button'
 import './Counter.css'
 
 const propTypes = {
@@ -21,7 +20,7 @@ class Counter extends Component {
         <div className='counter-label'>
           Value: {value}
         </div>
-        <Button onClick={onClick}>+</Button>
+        <button onClick={onClick}>+</button>
       </div>
     )
   }
