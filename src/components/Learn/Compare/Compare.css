@@ -1,0 +1,30 @@
+.learn {
+	height: 300px;
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	padding: 15% 0 0 0;
+	color: black;
+}
+.learn a {
+	padding: 30px;
+	text-align: center;
+	width: 150px;
+	height: 100px;
+	border: 1px solid black;
+	border-radius: 5px;
+	color: black;
+}
+.learn a:hover {
+	color: black;
+}
+.learn-block {
+	display: flex;
+	justify-content: space-around;
+}
+.learn-item {
+	position: relative;
+	height: 100px;
+	width: 25%;
+	border: 1px solid black;
+}

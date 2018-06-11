@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link , Route, Switch} from 'react-router-dom'
+import { Link, Route, Switch} from 'react-router-dom'
 import Content from 'components/Content'
 import Footer from 'components/Footer'
 import Header from 'components/Header'
@@ -15,13 +15,13 @@ import './App.css'
 class App extends Component {
   render () {
     return (
-      <div className="index-page bg-1">
+      <div className='index-page bg-1'>
         {
-          //<!--BG-1 ELEMENTS-->
-          <div id="particles-js"></div>
-          //<!--BG-1 ELEMENTS-->
+          // <!--BG-1 ELEMENTS-->
+          <div id='particles-js' />
+          // <!--BG-1 ELEMENTS-->
         }
-        <Header/>
+        <Header />
         <Switch>
           <Route exact path='/' component={Content} />
           <Route path='/learn' component={Learn} />
@@ -30,7 +30,7 @@ class App extends Component {
           <Route path='/contact-us' component={ContactUs} />
           <Route component={NotFound} />
         </Switch>
-        <Footer/>
+        <Footer />
       </div>
     )
   }
