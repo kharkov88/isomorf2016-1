@@ -2,26 +2,19 @@ import React, { PropTypes, Component } from 'react'
 import { Link, Route, Switch } from 'react-router-dom'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
-
-const About = () => (
-  <div>
-    <h2>About</h2>
-  </div>
-)
+import Compare from './Compare'
 
 class LearnPage extends Component {
   componentWillUnmount () {
   }
   constructor (props) {
     super(props)
-    this.state = {
-    }
   }
   render () {
     let {url} = this.props.match
     return (
       <div className='learn-page bg-1'>
-        <div id='particles-js' />
+
         <Header />
         <main className='container main'>
           <h1>Not sure you need AMP?</h1>
@@ -62,13 +55,19 @@ class LearnPage extends Component {
             </div>
           </div>
         </main>
-        <Footer/>
+        <Footer url={url} />
       </div>
     )
   }
 }
 
-export default LearnPage
+// export default LearnPage
+export default ({match}) => (
+  <div>
+    <Route exact path={`${match.url}`} component={LearnPage} />
+    <Route path={`${match.url}/compare`} component={Compare} />
+  </div>
+)
 
 /*
       <div classNameName='content'>

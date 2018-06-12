@@ -3,24 +3,15 @@ import { Link, Route, Switch } from 'react-router-dom'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 
-const About = () => (
-  <div>
-    <h2>About</h2>
-  </div>
-)
-
 class IndexPage extends Component {
-  componentWillUnmount () {
-  }
   constructor (props) {
     super(props)
-    this.state = {
-    }
   }
   render () {
+    let {url} = this.props.match
     return (
       <div className='index-page bg-1'>
-        <div id='particles-js' />
+
         <Header />
         <main className='container main'>
           <h1 className='animated zoomIn'>We make fast Google AMP pages</h1>
@@ -69,7 +60,7 @@ class IndexPage extends Component {
             </div>
           </div>
         </main>
-        <Footer/>
+        <Footer url={this.props.match.url} />
       </div>
     )
   }
