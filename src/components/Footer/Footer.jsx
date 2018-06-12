@@ -9,12 +9,10 @@ class Footer extends Component {
   }
   render () {
     return (
-      <div className='footer'>
-        <Link to='/learn'>learn</Link>
-        <Link to='/order'>order</Link>
-        <Link to='/for-free'>for-free</Link>
-        <Link to='/contact-us'>contact-us</Link>
-      </div>
+      <footer>
+        <div className='copyright'>© 2018 Mobile Web Solutions, Inc.
+          <span className='m-hide'>All rights reserved.</span></div>
+      </footer>
     )
   }
 }

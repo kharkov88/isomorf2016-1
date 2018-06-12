@@ -32,15 +32,27 @@ function renderHTML (componentHTML) {
   return `
     <!DOCTYPE html>
       <html>
-      <head>
+      <head> 
+          <title>MobilizeToday</title>
           <meta charset="utf-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-          <title>Hello React</title>
+          <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+          <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,900" rel="stylesheet">
           <link rel="stylesheet" href="${assetUrl}/public/assets/styles.css">
       </head>
-      <body>
+
+      <body >
         <div id="react-view">${componentHTML}</div>
+        
+        <!-- SCRIPTS BG-1 -->
+        <script src="js/bg-1/particles.js"></script>
+        <script src="js/bg-1/app.js"></script>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/random-amimation-block.js"></script>
+
+        <!-- react-app -->
         <script type="application/javascript" src="${assetUrl}/public/assets/bundle.js"></script>
+
       </body>
     </html>
   `

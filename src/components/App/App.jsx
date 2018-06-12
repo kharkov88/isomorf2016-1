@@ -1,23 +1,27 @@
 import React, { Component } from 'react'
-import { Link , Route, Switch} from 'react-router-dom'
-import Content from 'components/Content/Content.jsx'
-import Footer from 'components/Footer/Footer.jsx'
+import { Link, Route, Switch} from 'react-router-dom'
+import Content from 'components/Content'
+import Footer from 'components/Footer'
+import Header from 'components/Header'
 import Learn from 'components/Learn'
 import NotFound from 'components/NotFound'
 
-import './bootstrap.css'
+import './css/main.css'
+import './css/animate.css'
+import './css/hover.css'
+
 import './App.css'
 
 class App extends Component {
   render () {
-    //let {url} = this.props.match
     return (
-      <div>
-        <div className='header'>
-          <Link to='/'> Logo</Link>
-          <div>We make fast Google AMP pages</div>
-          <div>back</div>
-        </div>
+      <div className='index-page bg-1'>
+        {
+          // <!--BG-1 ELEMENTS-->
+          <div id='particles-js' />
+          // <!--BG-1 ELEMENTS-->
+        }
+        <Header />
         <Switch>
           <Route exact path='/' component={Content} />
           <Route path='/learn' component={Learn} />
@@ -26,7 +30,7 @@ class App extends Component {
           <Route path='/contact-us' component={ContactUs} />
           <Route component={NotFound} />
         </Switch>
-        <Footer/>
+        <Footer />
       </div>
     )
   }
