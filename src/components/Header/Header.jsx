@@ -25,16 +25,15 @@ class Header extends Component {
               <span className='logo-right'>Today</span>
             </Link>
           </div>
-          { 
+          {
             this.state.pathName === null
-            ? null
-            :
-            this.state.pathName === ROOT
-              ? <a className='get-quote-link' href='#orderPage'>Get a quote</a>
-              : <a className='back-link' onClick={back}>
-                <i className='material-icons'>keyboard_return</i>
-                <span>Back</span>
-              </a>
+              ? null
+              : this.state.pathName === ROOT
+                ? <a className='get-quote-link' href='#orderPage'>Get a quote</a>
+                : <a className='back-link' onClick={back}>
+                  <i className='material-icons'>keyboard_return</i>
+                  <span>Back</span>
+                </a>
           }
         </div>
       </header>

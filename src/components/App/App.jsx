@@ -9,6 +9,8 @@ import IndexPage from 'components/IndexPage'
 import LearnPage from 'components/LearnPage'
 import PortfolioPage from 'components/PortfolioPage'
 
+import TermsOfService from 'components/Footer/TermsOfService'
+import PrivacyPolicy from 'components/Footer/PrivacyPolicy'
 import './App.css'
 
 class App extends Component {
@@ -17,7 +19,8 @@ class App extends Component {
       <Switch>
         <Route exact path='/' component={IndexPage} />
         <Route path='/learn' component={LearnPage} />
-        <Route path='/portfolio' component={PortfolioPage} />
+        <Route path='/public-offer' component={TermsOfService} />
+        <Route path='/privacy-policy' component={PrivacyPolicy} />
         <Route component={NotFound} />
       </Switch>
     )
@@ -25,3 +28,4 @@ class App extends Component {
 }
 
 export default App
+// <Route path='/portfolio' component={PortfolioPage} />

@@ -2,6 +2,7 @@ import React, { PropTypes, Component } from 'react'
 import { Link, Route, Switch } from 'react-router-dom'
 import './Compare.css'
 import Header from 'components/Header'
+import Footer from 'components/Footer'
 
 class Compare extends React.Component {
   constructor (props) {
@@ -32,6 +33,7 @@ class Compare extends React.Component {
             </div>
           </form>
         </main>
+        <Footer url={url} />
       </div>
     )
   }

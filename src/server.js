@@ -73,6 +73,7 @@ function renderHTML (componentHTML) {
         <script src="/js/bg-1/particles.js"></script>
         <script src="/js/bg-1/app.js"></script>
         <script src="/js/jquery-3.3.1.min.js"></script>
+        <script src="/js/jquery.tinyscrollbar.min.js"></script>
         <script src="/js/random-amimation-block.js"></script>
 
         <!-- react-app -->

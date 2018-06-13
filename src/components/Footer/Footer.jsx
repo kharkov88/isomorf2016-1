@@ -9,9 +9,21 @@ const config = {
     hrefs: ['portfolio', 'for-free', 'contact-us'],
     text: ['See portfolio', 'Looking for free options', 'Contact us']
   },
+  '/learn/compare': {
+    hrefs: ['learn', 'portfolio', 'for-free', 'contact-us'],
+    text: ['Not sure you need AMP?', 'See portfolio', 'Looking for free options', 'Contact us']
+  },
   '/portfolio': {
     hrefs: ['learn', 'for-free', 'contact-us'],
     text: ['Not sure you need AMP?', 'Looking for free options', 'Contact us']
+  },
+  '/public-offer': {
+    hrefs: ['learn', 'portfolio', 'for-free', 'contact-us'],
+    text: ['Not sure you need AMP?', 'See portfolio', 'Looking for free options', 'Contact us']
+  },
+  '/privacy-policy': {
+    hrefs: ['learn', 'portfolio', 'for-free', 'contact-us'],
+    text: ['Not sure you need AMP?', 'See portfolio', 'Looking for free options', 'Contact us']
   }
 }
 
@@ -56,38 +68,12 @@ const DinamicFooter = ({params}) => {
       </div>
       <div className='container'>
         <div className='footer-links'>
-          <a href='#public-offer.html'>Terms of Service</a>
-          <a href='#privacy-policy.html'>Privacy Policy</a>
+          <Link to='/public-offer'>Terms of Service</Link>
+          <Link to='/privacy-policy'>Privacy Policy</Link>
         </div>
         <div className='copyright'>© 2018 Mobile Web Solutions, Inc.</div>
       </div>
     </footer>
   )
 }
-/*
-const CustomLink = ({params}) => {
-  let { hrefs, text } = params
-  return (
-    <div>
-      {
-        hrefs.map((item, id) => {
-          let name = `navigation-item ${item}-item animated bounceInLeft`
-          return (
-          <Link to={item} key={id} className={name}>
-            <span>{text[id]}</span>
-          </Link>
-          )
-        })
-      }
-    </div>
-  )
-}
-*/
 export default Footer
-
-/*
-  <a href="learn.html" className="navigation-item learn-item animated bounceInLeft"><span>Not sure you need AMP?</span></a>
-  <a href="portfolio.html" className="navigation-item portfolio-item animated bounceInLeft"><span>See portfolio</span></a>
-  <a href="for-free.html" className="navigation-item for-free-item animated bounceInLeft"><span>Looking for free options</span></a>
-  <a href="contact-us.html" className="navigation-item contact-us-item animated bounceInLeft"><span>Contact us</span></a>
-*/
