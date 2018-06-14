@@ -17,10 +17,7 @@ class OrderPage extends Component {
       : this.elem = {}
   }
   componentDidMount () {
-    this.elem.hidden = true
-    let $scrollbar = $('#scrollbar1')
-    $scrollbar.tinyscrollbar()
-
+    this.elem.style.display = 'none'
     setTimeout(() => {
       projector()
       canvasRenderer()
@@ -28,7 +25,7 @@ class OrderPage extends Component {
     }, 0)
   }
   componentWillUnmount () {
-    this.elem.hidden = false
+    this.elem.style.display = 'block'
   }
   render () {
     let {url} = this.props.match

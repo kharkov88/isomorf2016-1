@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link, Route, Switch } from 'react-router-dom'
-import Content from 'components/Content'
+
 import Footer from 'components/Footer'
 import Header from 'components/Header'
 
@@ -10,6 +10,7 @@ import LearnPage from 'components/LearnPage'
 import OrderPage from 'components/OrderPage'
 import ContactUsPage from 'components/ContactUsPage'
 import PortfolioPage from 'components/PortfolioPage'
+import ForFreePage from 'components/ForFreePage'
 
 import TermsOfService from 'components/Footer/TermsOfService'
 import PrivacyPolicy from 'components/Footer/PrivacyPolicy'
@@ -26,6 +27,7 @@ class App extends Component {
         <Route path='/privacy-policy' component={PrivacyPolicy} />
         <Route path='/order' component={OrderPage} />
         <Route path='/contact-us' component={ContactUsPage} />
+        <Route path='/for-free' component={ForFreePage} />
         <Route component={NotFound} />
       </Switch>
     )

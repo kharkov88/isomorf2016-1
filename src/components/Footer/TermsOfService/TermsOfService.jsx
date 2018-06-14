@@ -11,12 +11,12 @@ class TermsOfService extends Component {
       : this.elem = {}
   }
   componentDidMount () {
-    this.elem.hidden = true
+    this.elem.style.display = 'none'
     let $scrollbar = $('#scrollbar1')
     $scrollbar.tinyscrollbar()
   }
   componentWillUnmount () {
-    this.elem.hidden = false
+    this.elem.style.display = 'block'
   }
   render () {
     let {url} = this.props.match

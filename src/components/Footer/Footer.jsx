@@ -21,6 +21,10 @@ const config = {
     hrefs: ['learn', 'portfolio', 'for-free', 'contact-us'],
     text: ['Not sure you need AMP?', 'See portfolio', 'Looking for free options', 'Contact us']
   },
+  '/for-free': {
+    hrefs: ['learn', 'portfolio', 'contact-us'],
+    text: ['Not sure you need AMP?', 'See portfolio', 'Contact us']
+  },
   '/portfolio': {
     hrefs: ['learn', 'for-free', 'contact-us'],
     text: ['Not sure you need AMP?', 'Looking for free options', 'Contact us']
@@ -36,18 +40,16 @@ const config = {
   '/order': {
     hrefs: ['learn', 'portfolio', 'for-free', 'contact-us'],
     text: ['Not sure you need AMP?', 'See portfolio', 'Looking for free options', 'Contact us']
+  },
+  example: {
+    hrefs: ['bad-route'],
+    text: ['bad footer']   
   }
 }
 
 class Footer extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      url: this.props.url
-    }
-  }
   render () {
-    let url = this.state.url
+    let url = this.props.url
     return (
       url === ROOT
         ? <footer>
@@ -60,6 +62,7 @@ class Footer extends Component {
 }
 
 const DinamicFooter = ({params}) => {
+  params = params || config.example
   let { hrefs, text } = params
   return (
     <footer>

@@ -87,22 +87,3 @@ class PortfolioPage extends Component {
 
 export default PortfolioPage
 
-/*
-      <div classNameName='content'>
-        <div><h1>We make fast Google AMP pages</h1></div>
-        <div classNameName='content-text'>
-          <ul>
-            <li>Extend your web presence by adding AMP</li>
-            <li>Get higher speed web content</li>
-            <li>Obtain privileged view in Google search</li>
-          </ul>
-        </div>
-        <div classNameName='content-links'>
-          <Link to='/learn'>learn</Link>
-          <Link to='/order'>order</Link>
-          <Link to='/for-free'>for-free</Link>
-          <Link to='/contact-us'>contact-us</Link>
-        </div>
-
-      </div>
-      */
