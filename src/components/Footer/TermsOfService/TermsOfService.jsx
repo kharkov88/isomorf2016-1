@@ -4,18 +4,18 @@ import Header from 'components/Header'
 import Footer from 'components/Footer'
 
 class TermsOfService extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
-    global.navigator 
+    global.navigator
       ? this.elem = document.querySelector('#particles-js')
       : this.elem = {}
   }
-  componentDidMount(){
+  componentDidMount () {
     this.elem.hidden = true
-    let $scrollbar = $("#scrollbar1")
+    let $scrollbar = $('#scrollbar1')
     $scrollbar.tinyscrollbar()
   }
-  componentWillUnmount(){
+  componentWillUnmount () {
     this.elem.hidden = false
   }
   render () {

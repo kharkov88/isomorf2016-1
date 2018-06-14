@@ -1,6 +1,5 @@
 import React, { PropTypes, Component } from 'react'
 import { Link, Route, Switch } from 'react-router-dom'
-import './Compare.css'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 

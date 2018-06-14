@@ -29,7 +29,7 @@ class Header extends Component {
             this.state.pathName === null
               ? null
               : this.state.pathName === ROOT
-                ? <a className='get-quote-link' href='#orderPage'>Get a quote</a>
+                ? <Link className='get-quote-link' to='/order'>Get a quote</Link>
                 : <a className='back-link' onClick={back}>
                   <i className='material-icons'>keyboard_return</i>
                   <span>Back</span>

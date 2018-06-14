@@ -7,10 +7,13 @@ import Header from 'components/Header'
 import NotFound from 'components/NotFound'
 import IndexPage from 'components/IndexPage'
 import LearnPage from 'components/LearnPage'
+import OrderPage from 'components/OrderPage'
+import ContactUsPage from 'components/ContactUsPage'
 import PortfolioPage from 'components/PortfolioPage'
 
 import TermsOfService from 'components/Footer/TermsOfService'
 import PrivacyPolicy from 'components/Footer/PrivacyPolicy'
+
 import './App.css'
 
 class App extends Component {
@@ -21,6 +24,8 @@ class App extends Component {
         <Route path='/learn' component={LearnPage} />
         <Route path='/public-offer' component={TermsOfService} />
         <Route path='/privacy-policy' component={PrivacyPolicy} />
+        <Route path='/order' component={OrderPage} />
+        <Route path='/contact-us' component={ContactUsPage} />
         <Route component={NotFound} />
       </Switch>
     )

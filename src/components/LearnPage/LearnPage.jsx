@@ -3,10 +3,9 @@ import { Link, Route, Switch } from 'react-router-dom'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 import Compare from './Compare'
+import Services from './Services'
 
 class LearnPage extends Component {
-  componentWillUnmount () {
-  }
   constructor (props) {
     super(props)
   }
@@ -37,7 +36,7 @@ class LearnPage extends Component {
                 </Link>
               </figure>
               <figure className='effect-chico animated bounceInDown'>
-                <Link to={url + '/contact-us'}>
+                <Link to='/contact-us'>
                   <img src='img/block-image/contact-expert.svg' alt='Contact expert' />
                   <figcaption>
                     <h2>Contact expert</h2>
@@ -45,7 +44,7 @@ class LearnPage extends Component {
                 </Link>
               </figure>
               <figure className='effect-chico animated bounceInRight'>
-                <Link to={url + '/order'}>
+                <Link to='/order'>
                   <img src='img/block-image/order.svg' alt='Request a quote' />
                   <figcaption>
                     <h2>Request a quote</h2>
@@ -61,30 +60,10 @@ class LearnPage extends Component {
   }
 }
 
-// export default LearnPage
 export default ({match}) => (
   <div>
     <Route exact path={`${match.url}`} component={LearnPage} />
     <Route path={`${match.url}/compare`} component={Compare} />
+    <Route path={`${match.url}/services`} component={Services} />
   </div>
 )
-
-/*
-      <div classNameName='content'>
-        <div><h1>We make fast Google AMP pages</h1></div>
-        <div classNameName='content-text'>
-          <ul>
-            <li>Extend your web presence by adding AMP</li>
-            <li>Get higher speed web content</li>
-            <li>Obtain privileged view in Google search</li>
-          </ul>
-        </div>
-        <div classNameName='content-links'>
-          <Link to='/learn'>learn</Link>
-          <Link to='/order'>order</Link>
-          <Link to='/for-free'>for-free</Link>
-          <Link to='/contact-us'>contact-us</Link>
-        </div>
-
-      </div>
-      */

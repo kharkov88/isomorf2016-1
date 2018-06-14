@@ -1,13 +1,11 @@
-
 import express from 'express'
 import React from 'react'
 import ReactDom from 'react-dom/server'
-import { StaticRouter, Route, Switch } from 'react-router'
+import { StaticRouter } from 'react-router'
 
 import { Provider } from 'react-redux'
 import configureStore from './redux/configureStore'
-import App from './components/App/App.jsx'
-import NotFound from 'components/NotFound'
+
 import routes from './routes'
 
 const app = express()
@@ -75,6 +73,9 @@ function renderHTML (componentHTML) {
         <script src="/js/jquery-3.3.1.min.js"></script>
         <script src="/js/jquery.tinyscrollbar.min.js"></script>
         <script src="/js/random-amimation-block.js"></script>
+
+        <!-- SCRIPTS BG-2 -->
+        <script src="/js/bg-2/three.min.js"></script>
 
         <!-- react-app -->
         <script type="application/javascript" src="${assetUrl}/public/assets/bundle.js"></script>

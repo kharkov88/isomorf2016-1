@@ -1,3 +1,3 @@
-import Learn from './Learn'
+import ServicesPage from './ServicesPage'
 
-export default Learn
+export default ServicesPage
