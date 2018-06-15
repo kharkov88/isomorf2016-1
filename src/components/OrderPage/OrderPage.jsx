@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link, Route, Switch } from 'react-router-dom'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
+import formProps from 'components/hoc/formProps'
 
 // script bg-2
 // import three from './bg-2-js/three.min.js'
@@ -38,7 +39,7 @@ class OrderPage extends Component {
       <div className='order-page bg-2'>
         <Header />
         <main className='container main'>
-            <CustomForm />
+          <CustomForm />
         </main>
         <div id='canvas' className='gradient' />
         <Footer url={url} />
@@ -47,99 +48,58 @@ class OrderPage extends Component {
   }
 }
 
-class CustomForm extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      valueName: '',
-      valueUrl: '',
-      valueEmail: '',
-      valueMsg: '',
-      startFetch: false,
-      response: ''
-    }
+let OrderForm = (props) => {
+    let {response, startFetch, valueName, valueUrl} = props
+    let {handleChangeName, handleChangeUrl, handleSubmit} = props
 
-    this.handleChangeName = this.handleChangeName.bind(this)
-    this.handleChangeUrl = this.handleChangeUrl.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-  }
-  handleChangeName(event) {
-    this.setState({valueName: event.target.value});
-  }
-  handleChangeUrl(event) {
-    this.setState({valueUrl: event.target.value});
-  }
-  handleChangeEmail(event) {
-    this.setState({valueEmail: event.target.value});
-  }
-  handleChangeMsg(event) {
-    this.setState({valueMsg: event.target.value});
-  }
-
-  handleSubmit(event) {
-    //alert('A name was submitted: ' + this.state.valueName);
-    this.setState({startFetch: !this.state.startFetch})
-    setTimeout(() => {
-      this.setState({
-        response: 'Successful!',
-        startFetch: !this.state.startFetch
-      })
-    },1500)
-    setTimeout(() => {
-      document.querySelector('.logo a').click()
-    },2000)
-    event.preventDefault();
-  }
-
-  render() {
-    return(
-      this.state.response.length>1
-      ? <h1 style={config.style}>{this.state.response}</h1>
-      :
-        this.state.startFetch
-        ? <h1 style={config.style}>loading...</h1>
-        :
-        <div style={config.style}>
-          <h1 className='animated zoomIn'>Get a quote</h1>
-          <section className='order-form animated zoomIn'>
-            <div className='order-form-description'>Successful and profitable projects beginning here</div>
-            <form id='order-form' onSubmit={this.handleSubmit}>
-              <div className='input-block'>
-                <div className='left-side'>
-                  <input 
-                    type='text'
-                    id='order-name' 
-                    name='order-name' 
-                    className='form-control' 
-                    placeholder='Name'
-                    value={this.state.valueName}
-                    onChange={this.handleChangeName}
-                  />
-                  <input 
-                    type='text' 
-                    id='order-url' 
-                    name='order-url' 
-                    className='form-control' 
-                    placeholder='URL'
-                    value={this.state.valueUrl}
-                    onChange={this.handleChangeUrl}
-                  />
-                  <input type='email' id='order-email' name='order-email' className='form-control' placeholder='Email' />
+    return (
+      response.length > 1
+        ? <h1 style={config.style}>{response}</h1>
+        : startFetch
+          ? <h1 style={config.style}>loading...</h1>
+          : <div style={config.style}>
+            <h1 className='animated zoomIn'>Get a quote</h1>
+            <section className='order-form animated zoomIn'>
+              <div className='order-form-description'>Successful and profitable projects beginning here</div>
+              <form id='order-form' onSubmit={handleSubmit}>
+                <div className='input-block'>
+                  <div className='left-side'>
+                    <input
+                      type='text'
+                      id='order-name'
+                      name='order-name'
+                      className='form-control'
+                      placeholder='Name'
+                      value={valueName}
+                      onChange={handleChangeName}
+                    />
+                    <input
+                      type='text'
+                      id='order-url'
+                      name='order-url'
+                      className='form-control'
+                      placeholder='URL'
+                      value={valueUrl}
+                      onChange={handleChangeUrl}
+                    />
+                    <input type='email' id='order-email' name='order-email' className='form-control' placeholder='Email' />
+                  </div>
+                  <div className='right-side'>
+                    <textarea id='order-message' name='order-message' className='form-control' placeholder='Tell more about if you wish' />
+                  </div>
                 </div>
-                <div className='right-side'>
-                  <textarea id='order-message' name='order-message' className='form-control' placeholder='Tell more about if you wish' />
+                <div className='button-block'>
+                  <button type='submit' id='order-submit' className='order-form-submit'>
+                    <span>SUBMIT REQUEST</span>
+                    <i className='material-icons'>chevron_right</i>
+                  </button>
                 </div>
-              </div>
-              <div className='button-block'>
-                <button type='submit' id='order-submit' className='order-form-submit'>
-                  <span>SUBMIT REQUEST</span>
-                  <i className='material-icons'>chevron_right</i>
-                </button>
-              </div>
-            </form>
-          </section>
-        </div>
-      )
-  }
+              </form>
+            </section>
+          </div>
+    )
 }
+
+let CustomForm = formProps(OrderForm)
+
 export default OrderPage

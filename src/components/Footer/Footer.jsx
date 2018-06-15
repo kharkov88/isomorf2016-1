@@ -43,7 +43,7 @@ const config = {
   },
   example: {
     hrefs: ['bad-route'],
-    text: ['bad footer']   
+    text: ['bad footer']
   }
 }
 

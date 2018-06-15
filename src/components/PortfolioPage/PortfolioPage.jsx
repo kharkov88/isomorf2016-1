@@ -86,4 +86,3 @@ class PortfolioPage extends Component {
 }
 
 export default PortfolioPage
-

@@ -31,7 +31,7 @@ class ForFreePage extends Component {
                 </a>
               </figure>
               <figure className='effect-chico animated bounceInUp'>
-                <Link to='/learn/compare'>
+                <Link to='/compare'>
                   <img src='/img/block-image/3/compare.svg' alt='Compare load speed of any webpage with AMP' />
                   <figcaption>
                     <h2>Compare load speed of your webpage with AMP</h2>

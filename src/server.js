@@ -1,16 +1,29 @@
 import express from 'express'
+import bodyParser from 'body-parser'
 import React from 'react'
 import ReactDom from 'react-dom/server'
 import { StaticRouter } from 'react-router'
-
 import { Provider } from 'react-redux'
-import configureStore from './redux/configureStore'
 
-import routes from './routes'
+import configureStore from 'redux/configureStore'
+import routes from 'routes'
+import sendmsg from 'utilities/sendmsg'
 
 const app = express()
+const jsonParse = bodyParser.json()
 
 app.use(express.static(__dirname + '/'))
+
+app.post('/send-form', jsonParse, (req, res) => {
+  let config = {
+    name: req.body.name
+  }
+  sendmsg(config)
+  setTimeout(() => {
+    res.send('success!')
+  }, 2000)
+})
+
 app.use((req, res) => {
   console.log(req.url)
   const context = {}
