@@ -12,7 +12,7 @@ class Header extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      pathName: null
+      pathName: '/'
     }
   }
   render () {
@@ -26,9 +26,7 @@ class Header extends Component {
             </Link>
           </div>
           {
-            this.state.pathName === null
-              ? null
-              : this.state.pathName === ROOT
+              this.state.pathName === ROOT
                 ? <Link className='get-quote-link' to='/order'>Get a quote</Link>
                 : <a className='back-link' onClick={back}>
                   <i className='material-icons'>keyboard_return</i>

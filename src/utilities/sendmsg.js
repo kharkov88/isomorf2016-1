@@ -1,7 +1,14 @@
-'use strict'
-const nodemailer = require('nodemailer')
+import nodemailer from 'nodemailer'
 
 export default function (config) {
+  let text = `<b>Поступила заявка с сайта mt.com</b><br/>`
+  for (let key in config) {
+    redactor(key, config[key])
+  }
+  function redactor (key, value) {
+    let arr = key.split('value')
+    text += `<b>${arr[1]}: ${value}</b><br/>`
+  }
   // Generate test SMTP service account from ethereal.email
   // Only needed if you don't have a real mail account for testing
   return nodemailer.createTestAccount((err, account) => {
@@ -20,11 +27,11 @@ export default function (config) {
 
     // setup email data with unicode symbols
     let mailOptions = {
-      from: '"Fred Foo 👻" <job88kh@gmail.com>', // sender address
-      to: 'artem.vanakov@i3design.com', // list of receivers
-      subject: 'Hello ✔', // Subject line
+      from: '"Admin 👻" <job88kh@gmail.com>', // sender address
+      to: 'artem.vanakov@i3design.com, emperor343@gmail.com', // list of receivers
+      subject: 'Test ✔', // Subject line
       text: 'Hello admin', // plain text body
-      html: `<b>${config.name}</b><br/><b>Hello admin</b>` // html body
+      html: text// html body
     }
 
     // send mail with defined transport object

@@ -6,9 +6,9 @@ import Footer from 'components/Footer'
 class PrivacyPolicy extends Component {
   constructor (props) {
     super(props)
-    this.elem = document.querySelector('#particles-js')
   }
   componentDidMount () {
+    this.elem = document.querySelector('#particles-js')
     this.elem.style.display = 'none'
     let $scrollbar = $('#scrollbar1')
     $scrollbar.tinyscrollbar()
