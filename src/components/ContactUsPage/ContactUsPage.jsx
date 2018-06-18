@@ -86,11 +86,11 @@ let ContactUsForm = (props) => {
           <form id='contact-us-form' onSubmit={handleSubmit}>
             <div className='form-input'>
               <span className='form-text'>Hey <span className='color-name'>MobilizeToday</span> team, my name is</span>
-              <input 
-                type='text' 
-                id='contact-us-name' 
-                name='contact-us-name' 
-                className='form-control' 
+              <input
+                type='text'
+                id='contact-us-name'
+                name='contact-us-name'
+                className='form-control'
                 placeholder='Name'
                 value={valueName}
                 onChange={handleChangeName}
@@ -98,34 +98,34 @@ let ContactUsForm = (props) => {
             </div>
             <div className='form-input'>
               <span className='form-text'>Please, contact me via</span>
-              <input 
-                type='email' 
-                id='contact-us-email' 
-                name='contact-us-email' 
-                className='form-control' 
+              <input
+                type='email'
+                id='contact-us-email'
+                name='contact-us-email'
+                className='form-control'
                 placeholder='Email'
                 value={valueEmail}
                 onChange={handleChangeEmail}
               />
               <span className='form-text ml'>or</span>
-              <input 
-                type='tel' 
-                id='contact-us-phone' 
-                name='contact-us-phone' 
-                className='form-control' 
+              <input
+                type='tel'
+                id='contact-us-phone'
+                name='contact-us-phone'
+                className='form-control'
                 placeholder='Phone'
                 value={valuePhone}
                 onChange={handleChangePhone}
               />
             </div>
             <div className='form-textarea'>
-              <textarea 
-              id='contact-us-message' 
-              name='contact-us-message' 
-              className='form-control' 
-              placeholder="I'd like to speak with you about:"
-              value={valueMsg}
-              onChange={handleChangeMsg} 
+              <textarea
+                id='contact-us-message'
+                name='contact-us-message'
+                className='form-control'
+                placeholder="I'd like to speak with you about:"
+                value={valueMsg}
+                onChange={handleChangeMsg}
               />
             </div>
             <div className='form-button'>

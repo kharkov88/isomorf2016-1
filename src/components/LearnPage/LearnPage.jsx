@@ -2,7 +2,7 @@ import React, { PropTypes, Component } from 'react'
 import { Link, Route, Switch } from 'react-router-dom'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
-import Compare from './Compare'
+import Compare from 'components/SharePages/Compare'
 import Services from './Services'
 
 class LearnPage extends Component {

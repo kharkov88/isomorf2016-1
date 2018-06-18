@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link, Route, Switch } from 'react-router-dom'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
+import Compare from 'components/SharePages/Compare'
 
 class ForFreePage extends Component {
   componentWillUnmount () {
@@ -31,7 +32,7 @@ class ForFreePage extends Component {
                 </a>
               </figure>
               <figure className='effect-chico animated bounceInUp'>
-                <Link to='/compare'>
+                <Link to={url + '/compare'}>
                   <img src='/img/block-image/3/compare.svg' alt='Compare load speed of any webpage with AMP' />
                   <figcaption>
                     <h2>Compare load speed of your webpage with AMP</h2>
@@ -55,4 +56,10 @@ class ForFreePage extends Component {
   }
 }
 
-export default ForFreePage
+// export default ForFreePage
+export default ({match}) => (
+  <div>
+    <Route exact path={`${match.url}`} component={ForFreePage} />
+    <Route path={`${match.url}/compare`} component={Compare} />
+  </div>
+)

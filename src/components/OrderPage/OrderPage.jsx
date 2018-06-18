@@ -5,7 +5,7 @@ import Footer from 'components/Footer'
 import formProps from 'components/hoc/formProps'
 
 // script bg-2
-// import three from './bg-2-js/three.min.js'
+// import three.js from './bg-2-js/three.min.js'
 import linesAnimation from './bg-2-js/3d-lines-animation'
 import projector from './bg-2-js/projector'
 import canvasRenderer from './bg-2-js/canvas-renderer'
@@ -82,24 +82,24 @@ let OrderForm = (props) => {
                     value={valueUrl}
                     onChange={handleChangeUrl}
                   />
-                  <input 
-                    type='email' 
-                    id='order-email' 
-                    name='order-email' 
-                    className='form-control' 
+                  <input
+                    type='email'
+                    id='order-email'
+                    name='order-email'
+                    className='form-control'
                     placeholder='Email'
                     value={valueEmail}
                     onChange={handleChangeEmail}
                   />
                 </div>
                 <div className='right-side'>
-                  <textarea 
-                    id='order-message' 
-                    name='order-message' 
-                    className='form-control' 
+                  <textarea
+                    id='order-message'
+                    name='order-message'
+                    className='form-control'
                     placeholder='Tell more about if you wish'
                     value={valueMsg}
-                    onChange={handleChangeMsg} 
+                    onChange={handleChangeMsg}
                   />
                 </div>
               </div>

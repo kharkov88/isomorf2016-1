@@ -3,7 +3,7 @@ import axios from 'axios'
 
 function formProps (RComponent) {
   class FormProps extends Component {
-    componentDidMount() {
+    componentDidMount () {
       this.setState({
         url: location.pathname
       })

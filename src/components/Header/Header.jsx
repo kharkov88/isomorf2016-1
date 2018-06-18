@@ -26,12 +26,12 @@ class Header extends Component {
             </Link>
           </div>
           {
-              this.state.pathName === ROOT
-                ? <Link className='get-quote-link' to='/order'>Get a quote</Link>
-                : <a className='back-link' onClick={back}>
-                  <i className='material-icons'>keyboard_return</i>
-                  <span>Back</span>
-                </a>
+            this.state.pathName === ROOT
+              ? <Link className='get-quote-link' to='/order'>Get a quote</Link>
+              : <a className='back-link' onClick={back}>
+                <i className='material-icons'>keyboard_return</i>
+                <span>Back</span>
+              </a>
           }
         </div>
       </header>

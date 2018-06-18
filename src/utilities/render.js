@@ -13,7 +13,7 @@ const configPage = {
 
 export default function (componentHTML, key) {
   let title = configPage.title[key.toUpperCase()] || configPage.title.default
-  let assetUrl = process.env.NODE_ENV !== 'production' ? 'http://localhost:8050' : '/'
+  let assetUrl = process.env.NODE_ENV !== 'production' ? 'http://localhost:8050' : ''
   return `
     <!DOCTYPE html>
       <html>
@@ -28,8 +28,8 @@ export default function (componentHTML, key) {
           <link rel="stylesheet" href="/css/main.css">
           <link rel="stylesheet" href="/css/hover.css">
           <link rel="stylesheet" type="text/css" href="/css/portfolio.css" />
-          <script src="/js/portfolio/modernizr.custom.js"></script>
-
+          <link rel="stylesheet" type="text/css" href="/css/portfolio-example.css" />
+          
           <link rel="apple-touch-icon" sizes="57x57" href="/img/icons/apple-icon-57x57.png">
           <link rel="apple-touch-icon" sizes="60x60" href="/img/icons/apple-icon-60x60.png">
           <link rel="apple-touch-icon" sizes="72x72" href="/img/icons/apple-icon-72x72.png">
@@ -47,6 +47,8 @@ export default function (componentHTML, key) {
           <meta name="msapplication-TileColor" content="#ffffff">
           <meta name="msapplication-TileImage" content="/img/icons/ms-icon-144x144.png">
           <meta name="theme-color" content="#ffffff">
+          
+          <script src="/js/portfolio/modernizr.custom.js"></script>
       </head>
 
       <body >

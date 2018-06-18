@@ -35,8 +35,8 @@ export default {
     hrefs: ['learn', 'portfolio', 'for-free', 'contact-us'],
     text: ['Not sure you need AMP?', 'See portfolio', 'Looking for free options', 'Contact us']
   },
-  example: {
-    hrefs: ['bad-route'],
-    text: ['bad footer']
+  'template': {
+    hrefs: [],
+    text: []
   }
 }

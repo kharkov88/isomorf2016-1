@@ -20,7 +20,7 @@ class Footer extends Component {
 }
 
 const DinamicFooter = ({params}) => {
-  params = params || config.example
+  params = params || config.template
   let { hrefs, text } = params
   return (
     <footer>
