@@ -32,7 +32,7 @@ class PortfolioPage extends Component {
               <li className='active'>E-Commerce</li>
               <li>Mass media</li>
               <li>Services</li>
-              <li>Website card</li>
+              <li>Business card</li>
             </ul>
             {
               config.category.map((item, id) => {
@@ -88,7 +88,7 @@ const Image = (props) => {
 let PortfolioRoute = ({match}) => (
   <div>
     <Route exact path={`${match.url}`} component={PortfolioPage} />
-    <Route path={`${match.url}/:id`}  component={() => <ExamplePage />} />
+    <Route path={`${match.url}/:id`} component={() => <ExamplePage url={match.url} />} />
   </div>
 )
-export default  PortfolioRoute
+export default PortfolioRoute

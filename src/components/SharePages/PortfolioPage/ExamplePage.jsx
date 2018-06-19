@@ -5,6 +5,15 @@ import Footer from 'components/Footer'
 
 import config from 'configs/portfolio-data'
 
+let links = []
+config.category.map(item => {
+  item.imgs.map(item => {
+    links.push(item.title)
+  })
+})
+
+//console.log(links)
+
 class ExamplePage extends Component {
   constructor (props) {
   	super(props)
@@ -12,33 +21,34 @@ class ExamplePage extends Component {
   		pathname: ''
   	}
   }
-  componentDidMount() {
+  componentDidMount () {
   	this.setState({
   		pathname: location.pathname
   	})
   }
   render () {
     let {pathname, href} = this.state
-    let arr = pathname.split('/')
-    let title = arr[arr.length-1]
+    let arr = decodeURI(pathname).split('/')
+    let title = arr[arr.length - 1]
+    let categoryTitle = 'default'
     let {category} = config
-    let data={}
-    category.map( item => {
-    	return item.imgs.map( item => {
-    		if(item.title === title) return data=item
+    let data = {}
+    category.map(item => {
+    	return item.imgs.map(item => {
+    		if (item.title === title) return data = item
     	})
     })
-    console.log(data)
+    //console.log(title)
     return (
       <div className='portfolio-example bg-1'>
-      	<Header />
+        <Header />
         <main className='container main'>
-          <h1 className='title animated zoomIn'>Portfolio | {title}</h1>
+          <h1 className='title animated zoomIn'>Portfolio | {categoryTitle} | {title}</h1>
           <div className='portfolio-example-info'>
             <div className='example-image-wrapper'>
               <div className='info-image'>
                 <img src={data.href} />
-                <a className='example-link animated zoomInLeft' href='http://amp.eco-skovoroda.ru/skovorodi/?sort=5' target='_blank'>
+                <a className='example-link animated zoomInLeft' href={data.ampUrl} target='_blank'>
                   <span className='overlay'>
                     <span className='example-link animated zoomInLeft'>Open website</span>
                   </span>
@@ -62,35 +72,22 @@ class ExamplePage extends Component {
                 <p className='parameter-value'>{data.ampSpeed} sec</p>
               </div>
               <div className='example-qr'>
-                <a href='http://amp.eco-skovoroda.ru/skovorodi/?sort=5' target='_blank'>
+                <a href={data.ampUrl} target='_blank'>
                   <img src={data.qrcode} alt='eco-skovoroda.ru' />
                 </a>
                 <div className='qr-description'>
                   <p className='qr-description-title'>AMP URL:</p>
                   <p className='example-link'>
                     <a className='example-link animated zoomInLeft' href={data.ampUrl} target='_blank'>
-                    {data.ampUrl}
+                      {data.ampUrl}
                     </a>
                   </p>
                 </div>
               </div>
             </div>
             <div className='example-order-block'>
-              <div className='navigation-block'>
-                <div className='prev-example'>
-                  <a href='#'>
-                    <span className='btn-icon'><i className='material-icons'>keyboard_arrow_left</i></span>
-                    <span>Previous</span>
-                  </a>
-                </div>
-                <div className='next-example'>
-                  <a href='#'>
-                    <span className='btn-icon'><i className='material-icons'>keyboard_arrow_right</i></span>
-                    <span>Next</span>
-                  </a>
-                </div>
-              </div>
-              <a className='example-order-link' href='#order.html'>Order now</a>
+              <Navigator url={this.props.url} title={title} />
+              <Link className='example-order-link' to='/order'>Order now</Link>
             </div>
           </div>
         </main>
@@ -100,5 +97,31 @@ class ExamplePage extends Component {
     )
   }
 }
-
+const Navigator = (props) => {
+  let current = links.includes(props.title) && links.indexOf(props.title)
+  if (current === 0) {
+    let href = document.querySelector('.prev-example a')
+    href.classList.add('disabled')
+  }
+  if (current === 15) {
+    let href = document.querySelector('.next-example a')
+    href.classList.add('disabled')
+  }
+  return (
+    <div className='navigation-block'>
+      <div className='prev-example'>
+        <Link to={`${props.url}/${links[current - 1]}`}>
+          <span className='btn-icon'><i className='material-icons'>keyboard_arrow_left</i></span>
+          <span>Previous</span>
+        </Link>
+      </div>
+      <div className='next-example'>
+        <Link to={`${props.url}/${links[current + 1]}`}>
+          <span className='btn-icon'><i className='material-icons'>keyboard_arrow_right</i></span>
+          <span>Next</span>
+        </Link>
+      </div>
+    </div>
+  )
+}
 export default ExamplePage

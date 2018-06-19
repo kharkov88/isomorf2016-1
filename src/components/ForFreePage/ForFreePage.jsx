@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link, Route, Switch } from 'react-router-dom'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
+import OrderPage from 'components/OrderPage'
 import Compare from 'components/SharePages/Compare'
 
 class ForFreePage extends Component {
@@ -40,7 +41,7 @@ class ForFreePage extends Component {
                 </Link>
               </figure>
               <figure className='effect-chico animated bounceInRight'>
-                <Link to='/order'>
+                <Link to={url + '/order'}>
                   <img src='/assets/img/block-image/3/order.svg' alt='Request a quote (for free!)' />
                   <figcaption>
                     <h2>Request a quote for free!</h2>
@@ -61,5 +62,6 @@ export default ({match}) => (
   <div>
     <Route exact path={`${match.url}`} component={ForFreePage} />
     <Route path={`${match.url}/compare`} component={Compare} />
+    <Route path={`${match.url}/order`} component={OrderPage} />
   </div>
 )

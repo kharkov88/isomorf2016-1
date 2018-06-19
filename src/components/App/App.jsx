@@ -18,9 +18,11 @@ import PrivacyPolicy from 'components/Footer/PrivacyPolicy'
 import './App.css'
 
 class App extends Component {
-  componentDidMount() {
+  componentDidMount () {
     let pre = document.querySelector('#preloader')
-    document.body.removeChild(pre)
+    setTimeout(() => {
+      document.body.removeChild(pre)
+    }, 400)
   }
   render () {
     return (

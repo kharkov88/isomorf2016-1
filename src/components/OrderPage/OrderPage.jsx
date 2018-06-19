@@ -12,7 +12,7 @@ import canvasRenderer from './bg-2-js/canvas-renderer'
 
 let config = {
   style: {
-    margin: '0 auto'
+    width: '100%'
   }
 }
 class OrderPage extends Component {

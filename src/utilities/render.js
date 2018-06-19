@@ -17,7 +17,7 @@ export default function (componentHTML, key) {
   return `
     <!DOCTYPE html>
       <html>
-      <head> 
+      <head>
           <title>${title}</title>
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
@@ -75,3 +75,13 @@ export default function (componentHTML, key) {
     </html>
   `
 }
+
+/*
+          <script>
+            let div = document.createElement('div')
+            let img = document.createElement('img')
+            img.src = '/assets/img/loader.gif'
+            div.appendChild(img)
+            div.setAttribute('id', 'preloader')
+          </script>
+*/
