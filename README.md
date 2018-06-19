@@ -19,3 +19,5 @@ npm run nodemon
 npm run webpack-devserver
 ```
 Приложение будет доступно по адресу http://localhost:3003
+
+Staging: https://blooming-cove-25008.herokuapp.com/
