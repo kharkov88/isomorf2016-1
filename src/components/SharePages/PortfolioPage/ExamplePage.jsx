@@ -37,7 +37,7 @@ class ExamplePage extends Component {
           <div className='portfolio-example-info'>
             <div className='example-image-wrapper'>
               <div className='info-image'>
-                <img src='/img/portfolio/e-commerce/e-commerce-1.png' />
+                <img src={data.href} />
                 <a className='example-link animated zoomInLeft' href='http://amp.eco-skovoroda.ru/skovorodi/?sort=5' target='_blank'>
                   <span className='overlay'>
                     <span className='example-link animated zoomInLeft'>Open website</span>
@@ -63,12 +63,12 @@ class ExamplePage extends Component {
               </div>
               <div className='example-qr'>
                 <a href='http://amp.eco-skovoroda.ru/skovorodi/?sort=5' target='_blank'>
-                  <img src='/img/portfolio/qr/qr-1.jpg' alt='eco-skovoroda.ru' />
+                  <img src={data.qrcode} alt='eco-skovoroda.ru' />
                 </a>
                 <div className='qr-description'>
                   <p className='qr-description-title'>AMP URL:</p>
                   <p className='example-link'>
-                    <a className='example-link animated zoomInLeft' href='https://amp.eco-skovoroda.ru/skovorodi/?sort=5' target='_blank'>
+                    <a className='example-link animated zoomInLeft' href={data.ampUrl} target='_blank'>
                     {data.ampUrl}
                     </a>
                   </p>
@@ -90,7 +90,7 @@ class ExamplePage extends Component {
                   </a>
                 </div>
               </div>
-              <a className='example-order-link' href='order.html'>Order now</a>
+              <a className='example-order-link' href='#order.html'>Order now</a>
             </div>
           </div>
         </main>

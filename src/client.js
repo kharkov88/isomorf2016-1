@@ -5,7 +5,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import configureStore from './redux/configureStore'
 import App from 'components/App/App.jsx'
-// const pathName = window.location.pathname
 
 const store = configureStore()
 

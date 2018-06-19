@@ -21,7 +21,7 @@ class LearnPage extends Component {
             <div className='grid'>
               <figure className='effect-chico animated bounceInLeft'>
                 <Link to={url + '/compare'}>
-                  <img src='/img/block-image/compare.svg' alt='Compare load speed of any webpage with AMP' />
+                  <img src='/assets/img/block-image/compare.svg' alt='Compare load speed of any webpage with AMP' />
                   <figcaption>
                     <h2>Compare load speed of your webpage with AMP</h2>
                   </figcaption>
@@ -29,7 +29,7 @@ class LearnPage extends Component {
               </figure>
               <figure className='effect-chico animated bounceInUp'>
                 <Link to={url + '/services'}>
-                  <img src='/img/block-image/services.svg' alt='Why order here' />
+                  <img src='/assets/img/block-image/services.svg' alt='Why order here' />
                   <figcaption>
                     <h2>Why order here / Portfolio</h2>
                   </figcaption>
@@ -37,7 +37,7 @@ class LearnPage extends Component {
               </figure>
               <figure className='effect-chico animated bounceInDown'>
                 <Link to='/contact-us'>
-                  <img src='/img/block-image/contact-expert.svg' alt='Contact expert' />
+                  <img src='/assets/img/block-image/contact-expert.svg' alt='Contact expert' />
                   <figcaption>
                     <h2>Contact expert</h2>
                   </figcaption>
@@ -45,7 +45,7 @@ class LearnPage extends Component {
               </figure>
               <figure className='effect-chico animated bounceInRight'>
                 <Link to='/order'>
-                  <img src='/img/block-image/order.svg' alt='Request a quote' />
+                  <img src='/assets/img/block-image/order.svg' alt='Request a quote' />
                   <figcaption>
                     <h2>Request a quote</h2>
                   </figcaption>

@@ -6,22 +6,23 @@ export default {
       imgs: [
         {
           title: 'eco-skovoroda',
-          href: 'img/portfolio/e-commerce/e-commerce-1.png',
+          href: '/assets/img/portfolio/e-commerce/e-commerce-1.png',
           mobileSpeed: '9.3',
           ampSpeed: '4.2',
-          ampUrl: 'https://amp.eco-skovoroda.ru/skovorodi/'
+          ampUrl: 'https://amp.eco-skovoroda.ru/skovorodi/?sort=5',
+          qrcode: '/assets/img/portfolio/qr/qr-1.jpg'
         },
         {
           title: 'trikotrahmen',
-          href: 'img/portfolio/e-commerce/e-commerce-2.png'
+          href: '/assets/img/portfolio/e-commerce/e-commerce-2.png'
         },
         {
           title: 'optima-trade',
-          href: 'img/portfolio/e-commerce/e-commerce-3.png'
+          href: '/assets/img/portfolio/e-commerce/e-commerce-3.png'
         },
         {
           title: 'зd-toy',
-          href: 'img/portfolio/e-commerce/e-commerce-4.png'
+          href: '/assets/img/portfolio/e-commerce/e-commerce-4.png'
         }
       ]
     },
@@ -30,20 +31,20 @@ export default {
       classes: 'tabs__content ac-wrapper animated zoomInUp',
       imgs: [
         {
-          title: 'Flame-news',
-          href: 'img/portfolio/mass-media/mass-media-1.png'
+          title: 'flame-news',
+          href: '/assets/img/portfolio/mass-media/mass-media-1.png'
         },
         {
-          title: 'In-pocket',
-          href: 'img/portfolio/mass-media/mass-media-2.png'
+          title: 'in-pocket',
+          href: '/assets/img/portfolio/mass-media/mass-media-2.png'
         },
         {
-          title: 'Tokio-NP',
-          href: 'img/portfolio/mass-media/mass-media-3.png'
+          title: 'tokio-np',
+          href: '/assets/img/portfolio/mass-media/mass-media-3.png'
         },
         {
           title: 'gazetadaily',
-          href: 'img/portfolio/mass-media/mass-media-4.png'
+          href: '/assets/img/portfolio/mass-media/mass-media-4.png'
         }
       ]
     },
@@ -52,20 +53,20 @@ export default {
       classes: 'tabs__content ac-wrapper animated zoomInUp',
       imgs: [
         {
-          title: 'Klinika',
-          href: 'img/portfolio/services/services-1.png'
+          title: 'klinika',
+          href: '/assets/img/portfolio/services/services-1.png'
         },
         {
           title: 'lnjuryhelp',
-          href: 'img/portfolio/services/services-2.png'
+          href: '/assets/img/portfolio/services/services-2.png'
         },
         {
           title: 'logistic',
-          href: 'img/portfolio/services/services-3.png'
+          href: '/assets/img/portfolio/services/services-3.png'
         },
         {
           title: 'web-hosting-rating',
-          href: 'img/portfolio/services/services-4.png'
+          href: '/assets/img/portfolio/services/services-4.png'
         }
       ]
     },
@@ -74,20 +75,20 @@ export default {
       classes: 'tabs__content ac-wrapper animated zoomInUp',
       imgs: [
         {
-          title: 'goldira rollovers',
-          href: 'img/portfolio/website-card/website-card-1.png'
+          title: 'goldira-rollovers',
+          href: '/assets/img/portfolio/website-card/website-card-1.png'
         },
         {
-          title: 'rene chevalier',
-          href: 'img/portfolio/website-card/website-card-2.png'
+          title: 'rene-chevalier',
+          href: '/assets/img/portfolio/website-card/website-card-2.png'
         },
         {
-          title: 'lighting maintenance',
-          href: 'img/portfolio/website-card/website-card-3.png'
+          title: 'lighting-maintenance',
+          href: '/assets/img/portfolio/website-card/website-card-3.png'
         },
         {
-          title: 'Notaryreports',
-          href: 'img/portfolio/website-card/website-card-4.png'
+          title: 'notaryreports',
+          href: '/assets/img/portfolio/website-card/website-card-4.png'
         }
       ]
     }

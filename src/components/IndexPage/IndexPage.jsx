@@ -26,7 +26,7 @@ class IndexPage extends Component {
             <div className='grid'>
               <figure className='effect-chico animated zoomInLeft'>
                 <Link to='/learn'>
-                  <img src='img/block-image/learn.svg' alt='Not sure I need AMP' />
+                  <img src='/assets/img/block-image/learn.svg' alt='Not sure I need AMP' />
                   <figcaption>
                     <h2>Not sure you need AMP?</h2>
                   </figcaption>
@@ -35,7 +35,7 @@ class IndexPage extends Component {
 
               <figure className='effect-chico animated zoomInUp'>
                 <Link to='/portfolio'>
-                  <img src='img/block-image/portfolio.svg' alt='See portfolio' />
+                  <img src='/assets/img/block-image/portfolio.svg' alt='See portfolio' />
                   <figcaption>
                     <h2>See portfolio</h2>
                   </figcaption>
@@ -43,7 +43,7 @@ class IndexPage extends Component {
               </figure>
               <figure className='effect-chico animated zoomInDown'>
                 <Link to='/for-free'>
-                  <img src='img/block-image/for-free.svg' alt='Looking for free options' />
+                  <img src='/assets/img/block-image/for-free.svg' alt='Looking for free options' />
                   <figcaption>
                     <h2>Looking for free options</h2>
                   </figcaption>
@@ -51,7 +51,7 @@ class IndexPage extends Component {
               </figure>
               <figure className='effect-chico animated zoomInRight'>
                 <Link to='/contact-us'>
-                  <img src='img/block-image/contact-us.svg' alt='Contact us' />
+                  <img src='/assets/img/block-image/contact-us.svg' alt='Contact us' />
                   <figcaption>
                     <h2>Contact us</h2>
                   </figcaption>

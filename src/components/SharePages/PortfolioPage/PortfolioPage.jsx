@@ -39,8 +39,12 @@ class PortfolioPage extends Component {
                 return <TabContent key={id} {...item} url={url} />
               })
             }
-            <div className='prev-btn animated bounceIn'><i className='material-icons'>keyboard_arrow_left</i></div>
-            <div className='next-btn animated bounceIn'><i className='material-icons'>keyboard_arrow_right</i></div>
+            <div className='prev-btn animated bounceIn'>
+              <i className='material-icons'>keyboard_arrow_left</i>
+            </div>
+            <div className='next-btn animated bounceIn'>
+              <i className='material-icons'>keyboard_arrow_right</i>
+            </div>
           </div>
         </main>
         <Footer url={url} />
@@ -54,7 +58,7 @@ const TabContent = (props) => {
   return (
     <div className={`${classes} ${title}`}>
       <div className='ac-device'>
-        <a href='#'><img src='img/portfolio/amp-icon.png' /></a>
+        <a href='#'><img src='/assets/img/portfolio/amp-icon.png' /></a>
       </div>
       <div className='ac-grid'>
         {

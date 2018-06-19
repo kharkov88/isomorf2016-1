@@ -18,6 +18,10 @@ import PrivacyPolicy from 'components/Footer/PrivacyPolicy'
 import './App.css'
 
 class App extends Component {
+  componentDidMount() {
+    let pre = document.querySelector('#preloader')
+    document.body.removeChild(pre)
+  }
   render () {
     return (
       <Switch>

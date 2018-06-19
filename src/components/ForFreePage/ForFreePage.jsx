@@ -25,7 +25,7 @@ class ForFreePage extends Component {
             <div className='grid'>
               <figure className='effect-chico animated bounceInLeft'>
                 <a href='https://html2amp.mobilizetoday.com/' target='_blank'>
-                  <img src='/img/block-image/3/converter.svg' alt='Free HTML to AMP converter' />
+                  <img src='/assets/img/block-image/3/converter.svg' alt='Free HTML to AMP converter' />
                   <figcaption>
                     <h2>Free HTML to AMP converter</h2>
                   </figcaption>
@@ -33,7 +33,7 @@ class ForFreePage extends Component {
               </figure>
               <figure className='effect-chico animated bounceInUp'>
                 <Link to={url + '/compare'}>
-                  <img src='/img/block-image/3/compare.svg' alt='Compare load speed of any webpage with AMP' />
+                  <img src='/assets/img/block-image/3/compare.svg' alt='Compare load speed of any webpage with AMP' />
                   <figcaption>
                     <h2>Compare load speed of your webpage with AMP</h2>
                   </figcaption>
@@ -41,7 +41,7 @@ class ForFreePage extends Component {
               </figure>
               <figure className='effect-chico animated bounceInRight'>
                 <Link to='/order'>
-                  <img src='/img/block-image/3/order.svg' alt='Request a quote (for free!)' />
+                  <img src='/assets/img/block-image/3/order.svg' alt='Request a quote (for free!)' />
                   <figcaption>
                     <h2>Request a quote for free!</h2>
                   </figcaption>
