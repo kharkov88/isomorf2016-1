@@ -27,7 +27,7 @@ class ServicesPage extends React.Component {
             <div className='grid'>
               <figure className='effect-chico animated bounceInLeft'>
                 <Link to='/portfolio'>
-                  <img src='/img/block-image/portfolio.svg' alt='See portfolio' />
+                  <img src='/assets/img/block-image/portfolio.svg' alt='See portfolio' />
                   <figcaption>
                     <h2>See portfolio</h2>
                   </figcaption>
@@ -35,7 +35,7 @@ class ServicesPage extends React.Component {
               </figure>
               <figure className='effect-chico animated bounceInRight'>
                 <Link to='/order'>
-                  <img src='/img/block-image/order.svg' alt='Get a quote' />
+                  <img src='/assets/img/block-image/order.svg' alt='Get a quote' />
                   <figcaption>
                     <h2>Get a quote</h2>
                   </figcaption>

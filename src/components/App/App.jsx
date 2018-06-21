@@ -9,7 +9,7 @@ import IndexPage from 'components/IndexPage'
 import LearnPage from 'components/LearnPage'
 import OrderPage from 'components/OrderPage'
 import ContactUsPage from 'components/ContactUsPage'
-import PortfolioPage from 'components/PortfolioPage'
+import PortfolioPage from 'components/SharePages/PortfolioPage'
 import ForFreePage from 'components/ForFreePage'
 
 import TermsOfService from 'components/Footer/TermsOfService'
@@ -18,11 +18,18 @@ import PrivacyPolicy from 'components/Footer/PrivacyPolicy'
 import './App.css'
 
 class App extends Component {
+  componentDidMount () {
+    let pre = document.querySelector('#preloader')
+    setTimeout(() => {
+      document.body.removeChild(pre)
+    }, 400)
+  }
   render () {
     return (
       <Switch>
         <Route exact path='/' component={IndexPage} />
         <Route path='/learn' component={LearnPage} />
+        <Route path='/portfolio' component={PortfolioPage} />
         <Route path='/public-offer' component={TermsOfService} />
         <Route path='/privacy-policy' component={PrivacyPolicy} />
         <Route path='/order' component={OrderPage} />

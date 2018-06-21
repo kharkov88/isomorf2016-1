@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { Link, Route, Switch } from 'react-router-dom'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
+import OrderPage from 'components/OrderPage'
+import Compare from 'components/SharePages/Compare'
 
 class ForFreePage extends Component {
   componentWillUnmount () {
@@ -24,23 +26,23 @@ class ForFreePage extends Component {
             <div className='grid'>
               <figure className='effect-chico animated bounceInLeft'>
                 <a href='https://html2amp.mobilizetoday.com/' target='_blank'>
-                  <img src='/img/block-image/3/converter.svg' alt='Free HTML to AMP converter' />
+                  <img src='/assets/img/block-image/3/converter.svg' alt='Free HTML to AMP converter' />
                   <figcaption>
                     <h2>Free HTML to AMP converter</h2>
                   </figcaption>
                 </a>
               </figure>
               <figure className='effect-chico animated bounceInUp'>
-                <Link to='/compare'>
-                  <img src='/img/block-image/3/compare.svg' alt='Compare load speed of any webpage with AMP' />
+                <Link to={url + '/compare'}>
+                  <img src='/assets/img/block-image/3/compare.svg' alt='Compare load speed of any webpage with AMP' />
                   <figcaption>
                     <h2>Compare load speed of your webpage with AMP</h2>
                   </figcaption>
                 </Link>
               </figure>
               <figure className='effect-chico animated bounceInRight'>
-                <Link to='/order'>
-                  <img src='/img/block-image/3/order.svg' alt='Request a quote (for free!)' />
+                <Link to={url + '/order'}>
+                  <img src='/assets/img/block-image/3/order.svg' alt='Request a quote (for free!)' />
                   <figcaption>
                     <h2>Request a quote for free!</h2>
                   </figcaption>
@@ -55,4 +57,11 @@ class ForFreePage extends Component {
   }
 }
 
-export default ForFreePage
+// export default ForFreePage
+export default ({match}) => (
+  <div>
+    <Route exact path={`${match.url}`} component={ForFreePage} />
+    <Route path={`${match.url}/compare`} component={Compare} />
+    <Route path={`${match.url}/order`} component={OrderPage} />
+  </div>
+)

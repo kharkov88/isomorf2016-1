@@ -28,7 +28,10 @@ export default function (config) {
     // setup email data with unicode symbols
     let mailOptions = {
       from: '"Admin 👻" <job88kh@gmail.com>', // sender address
-      to: 'artem.vanakov@i3design.com, emperor343@gmail.com', // list of receivers
+      to: `
+       artem.vanakov@i3design.com,
+       emperor343@gmail.com
+       `, // list of receivers andrey.kolodochka@mobilizetoday.ru  alexey.zolotarev@mobilizetoday.ru
       subject: 'Test ✔', // Subject line
       text: 'Hello admin', // plain text body
       html: text// html body

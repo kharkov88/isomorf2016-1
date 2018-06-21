@@ -3,7 +3,7 @@ import axios from 'axios'
 
 function formProps (RComponent) {
   class FormProps extends Component {
-    componentDidMount() {
+    componentDidMount () {
       this.setState({
         url: location.pathname
       })
@@ -29,13 +29,19 @@ function formProps (RComponent) {
     }
 
     handleSubmit (event) {
+      event.preventDefault()
       let url = `/send-form${this.state.url}`
       let body = {}
       let state = this.state
+
+      if (state.valueName.length < 4) {
+        alert('bad data!')
+        return
+      }
       for (let key in state) {
         (state[key]) && (!!~key.indexOf('value')) && (body[key] = state[key])
       }
-      console.log(body)
+      // console.log(body)
       this.setState({startFetch: !this.state.startFetch})
 
       // real request
@@ -61,7 +67,6 @@ function formProps (RComponent) {
         document.querySelector('.logo a').click()
       }, 2000)
       */
-      event.preventDefault()
     }
     handleChangeName (event) {
       this.setState({valueName: event.target.value})
