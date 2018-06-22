@@ -22,7 +22,7 @@ class App extends Component {
     let pre = document.querySelector('#preloader')
     setTimeout(() => {
       document.body.removeChild(pre)
-    }, 400)
+    }, 600)
   }
   render () {
     return (

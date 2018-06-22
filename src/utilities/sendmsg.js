@@ -1,13 +1,19 @@
 import nodemailer from 'nodemailer'
 
 export default function (config) {
-  let text = `<b>Поступила заявка с сайта mt.com</b><br/>`
+  let text =
+            `
+            <b>Поступила заявка с сайта mobilizetoday.com</b><br/>
+            <b>Страница формы:</b> ${config.pathname}</br></br>
+            `
   for (let key in config) {
     redactor(key, config[key])
   }
   function redactor (key, value) {
     let arr = key.split('value')
-    text += `<b>${arr[1]}: ${value}</b><br/>`
+    if (arr[1]) {
+      text += `<b>${arr[1]}:</b> ${value}<br/>`
+    }
   }
   // Generate test SMTP service account from ethereal.email
   // Only needed if you don't have a real mail account for testing

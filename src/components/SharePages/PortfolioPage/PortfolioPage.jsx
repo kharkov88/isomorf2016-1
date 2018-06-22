@@ -88,7 +88,10 @@ const Image = (props) => {
 let PortfolioRoute = ({match}) => (
   <div>
     <Route exact path={`${match.url}`} component={PortfolioPage} />
-    <Route path={`${match.url}/:id`} component={() => <ExamplePage url={match.url} />} />
+    <Route 
+      path={`${match.url}/:id`} 
+      component={() => <ExamplePage url={match.url} />}
+    />
   </div>
 )
 export default PortfolioRoute

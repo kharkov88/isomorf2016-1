@@ -33,7 +33,7 @@ let CompareForm = (props) => {
   let {handleChangeName, handleChangeUrl, handleChangeEmail, handleChangeMsg, handleSubmit} = props
 
   return (
-    response.length > 1
+    response
       ? <h1 style={config.style}>{response}</h1>
       : startFetch
         ? <h1 style={config.style}>loading...</h1>

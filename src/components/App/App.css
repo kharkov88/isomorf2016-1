@@ -10,7 +10,7 @@ position: fixed;
 #preloader img {
     display: block;
     margin: 0 auto;
-    margin-top: 40%;
+    margin-top: 30%;
     width: 300px;
 }
 .prev-example a.disabled, .next-example a.disabled{

@@ -23,6 +23,10 @@ export default {
     hrefs: ['learn', 'for-free', 'contact-us'],
     text: ['Not sure you need AMP?', 'Looking for free options', 'Contact us']
   },
+  '/portfolio/id': {
+    hrefs: ['learn', 'portfolio', 'for-free', 'contact-us'],
+    text: ['Not sure you need AMP?', 'See portfolio', 'Looking for free options', 'Contact us']
+  },
   '/public-offer': {
     hrefs: ['learn', 'portfolio', 'for-free', 'contact-us'],
     text: ['Not sure you need AMP?', 'See portfolio', 'Looking for free options', 'Contact us']
