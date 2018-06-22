@@ -5,7 +5,7 @@ function formProps (RComponent) {
   class FormProps extends Component {
     componentDidMount () {
       this.setState({
-        url: location.pathname
+        pathname: location.pathname
       })
     }
     constructor (props) {
@@ -16,9 +16,8 @@ function formProps (RComponent) {
         valueUrl: '',
         valuePhone: '',
         valueMsg: '',
-
         startFetch: false,
-        response: ''
+        response: null
       }
       this.handleChangeName = this.handleChangeName.bind(this)
       this.handleChangeUrl = this.handleChangeUrl.bind(this)
@@ -30,18 +29,37 @@ function formProps (RComponent) {
 
     handleSubmit (event) {
       event.preventDefault()
-      let url = `/send-form${this.state.url}`
+      let { valueName, valueUrl, valueEmail, valueMsg, pathname } = this.state
+      let url = `/send-form${pathname}`
       let body = {}
+      let valid = false
       let state = this.state
+      
+      switch (pathname) {
+        case '/learn/compare':
+        if (!(valueUrl.length < 10) && !(valueEmail.indexOf('@') === -1)) {
+          valid = true
+        }
+        case '/order':
+        if (!(valueName.length < 4) && !(valueEmail.indexOf('@') === -1)) {
+          valid = true
+        }
+        case '/contact-us':
+        if (!(valueName.length < 4) && !(valueEmail.indexOf('@') === -1) && !(valueMsg.length < 10)) {
+          valid = true
+        }
+        default:
+      }
 
-      if (state.valueName.length < 4) {
-        alert('bad data!')
+      if (!valid) {
+        alert('incorrect data!')
         return
       }
       for (let key in state) {
         (state[key]) && (!!~key.indexOf('value')) && (body[key] = state[key])
       }
-      // console.log(body)
+      body.pathname = pathname
+      console.log(body)
       this.setState({startFetch: !this.state.startFetch})
 
       // real request

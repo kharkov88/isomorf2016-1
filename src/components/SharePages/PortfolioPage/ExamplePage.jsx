@@ -6,12 +6,14 @@ import Footer from 'components/Footer'
 import config from 'configs/portfolio-data'
 
 let links = []
-config.category.map(item => {
-  item.imgs.map(item => {
-    links.push(item.title)
-  })
-})
 
+function getLinks() {
+  config.category.map(item => {
+    item.imgs.map(item => {
+      links.push(item.title)
+    })
+  })  
+}
 //console.log(links)
 
 class ExamplePage extends Component {
@@ -21,29 +23,24 @@ class ExamplePage extends Component {
   		pathname: ''
   	}
   }
+
   componentDidMount () {
   	this.setState({
   		pathname: location.pathname
   	})
+    getLinks()
   }
+
   render () {
     let {pathname, href} = this.state
-    let arr = decodeURI(pathname).split('/')
-    let title = arr[arr.length - 1]
-    let categoryTitle = 'default'
-    let {category} = config
-    let data = {}
-    category.map(item => {
-    	return item.imgs.map(item => {
-    		if (item.title === title) return data = item
-    	})
-    })
-    //console.log(title)
+    let data = this.getData()
+    console.log(data)
+
     return (
       <div className='portfolio-example bg-1'>
         <Header />
         <main className='container main'>
-          <h1 className='title animated zoomIn'>Portfolio | {categoryTitle} | {title}</h1>
+          <h1 className='title animated zoomIn'>Portfolio | {data.category} | {data.title}</h1>
           <div className='portfolio-example-info'>
             <div className='example-image-wrapper'>
               <div className='info-image'>
@@ -86,15 +83,36 @@ class ExamplePage extends Component {
               </div>
             </div>
             <div className='example-order-block'>
-              <Navigator url={this.props.url} title={title} />
+              <Navigator url={this.props.url} title={data.title} />
               <Link className='example-order-link' to='/order'>Order now</Link>
             </div>
           </div>
         </main>
         <Footer />
       </div>
-
     )
+  }
+
+  getData() {
+    let {pathname, href} = this.state
+    let arr = decodeURI(pathname).split('/')
+    let title = arr[arr.length - 1]
+    let categoryTitle = null
+    let {category} = config
+    let data = {}
+
+    category.map(item => {
+      categoryTitle = item.title
+      return item.imgs.map(item => {
+        if (item.title === title) {
+          data = item
+          let a = categoryTitle.split('-').slice(0,2).join('-')
+          //console.log(a)
+          data.category = a
+        }
+      })
+    })
+    return data 
   }
 }
 const Navigator = (props) => {

@@ -82,19 +82,35 @@ export default {
       imgs: [
         {
           title: 'klinika',
-          href: '/assets/img/portfolio/services/services-1.png'
+          href: '/assets/img/portfolio/services/services-1.png',
+          mobileSpeed: '9.3',
+          ampSpeed: '4.2',
+          ampUrl: 'http://amp.tokyo-np.co.jp/article/politics/list/201806/CK2018060602000115.html',
+          qrcode: '/assets/img/portfolio/qr/qr-2.png'
         },
         {
           title: 'lnjuryhelp',
-          href: '/assets/img/portfolio/services/services-2.png'
+          href: '/assets/img/portfolio/services/services-2.png',
+          mobileSpeed: '9.3',
+          ampSpeed: '4.2',
+          ampUrl: 'http://amp.tokyo-np.co.jp/article/politics/list/201806/CK2018060602000115.html',
+          qrcode: '/assets/img/portfolio/qr/qr-2.png'
         },
         {
           title: 'logistic',
-          href: '/assets/img/portfolio/services/services-3.png'
+          href: '/assets/img/portfolio/services/services-3.png',
+          mobileSpeed: '9.3',
+          ampSpeed: '4.2',
+          ampUrl: 'http://amp.tokyo-np.co.jp/article/politics/list/201806/CK2018060602000115.html',
+          qrcode: '/assets/img/portfolio/qr/qr-2.png'
         },
         {
           title: 'web-hosting-rating',
-          href: '/assets/img/portfolio/services/services-4.png'
+          href: '/assets/img/portfolio/services/services-4.png',
+          mobileSpeed: '9.3',
+          ampSpeed: '4.2',
+          ampUrl: 'http://amp.tokyo-np.co.jp/article/politics/list/201806/CK2018060602000115.html',
+          qrcode: '/assets/img/portfolio/qr/qr-2.png'
         }
       ]
     },
@@ -104,19 +120,35 @@ export default {
       imgs: [
         {
           title: 'goldira-rollovers',
-          href: '/assets/img/portfolio/website-card/website-card-1.png'
+          href: '/assets/img/portfolio/website-card/website-card-1.png',
+          mobileSpeed: '9.3',
+          ampSpeed: '4.2',
+          ampUrl: 'http://amp.tokyo-np.co.jp/article/politics/list/201806/CK2018060602000115.html',
+          qrcode: '/assets/img/portfolio/qr/qr-2.png'
         },
         {
           title: 'rene-chevalier',
-          href: '/assets/img/portfolio/website-card/website-card-2.png'
+          href: '/assets/img/portfolio/website-card/website-card-2.png',
+          mobileSpeed: '9.3',
+          ampSpeed: '4.2',
+          ampUrl: 'http://amp.tokyo-np.co.jp/article/politics/list/201806/CK2018060602000115.html',
+          qrcode: '/assets/img/portfolio/qr/qr-2.png'
         },
         {
           title: 'lighting-maintenance',
-          href: '/assets/img/portfolio/website-card/website-card-3.png'
+          href: '/assets/img/portfolio/website-card/website-card-3.png',
+          mobileSpeed: '9.3',
+          ampSpeed: '4.2',
+          ampUrl: 'http://amp.tokyo-np.co.jp/article/politics/list/201806/CK2018060602000115.html',
+          qrcode: '/assets/img/portfolio/qr/qr-2.png'
         },
         {
           title: 'notaryreports',
-          href: '/assets/img/portfolio/website-card/website-card-4.png'
+          href: '/assets/img/portfolio/website-card/website-card-4.png',
+          mobileSpeed: '9.3',
+          ampSpeed: '4.2',
+          ampUrl: 'http://amp.tokyo-np.co.jp/article/politics/list/201806/CK2018060602000115.html',
+          qrcode: '/assets/img/portfolio/qr/qr-2.png'
         }
       ]
     }

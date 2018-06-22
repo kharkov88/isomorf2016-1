@@ -3,19 +3,44 @@ import { Link, Route } from 'react-router-dom'
 import config from 'configs/footer-links'
 
 const ROOT = '/'
-const LEARN = '/learn'
+const PORTFOLIO = 'portfolio'
+const PORTFOLIO_ID = '/portfolio/id'
 
 class Footer extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      url: ROOT
+    }
+  }
+
+  componentDidMount() {
+    this.setState({
+      url: location.pathname
+    }) 
+  }
+
   render () {
-    let url = this.props.url
+    let { url } = this.state
+    let params = this.getParams()
     return (
       url === ROOT
-        ? <footer>
+      ? <footer>
           <div className='copyright'>© 2018 Mobile Web Solutions, Inc.
             <span className='m-hide'>All rights reserved.</span></div>
         </footer>
-        : <DinamicFooter params={config[url]} />
+      : <DinamicFooter params={params} />
     )
+  }
+  getParams() {
+    let url = this.state.url
+    let a = url.split('/')
+    if ((a[1] === PORTFOLIO) && (typeof(a[2]) === 'string')) {
+      url = PORTFOLIO_ID
+    }
+    //console.log(url)
+    let params = config[url]
+    return params
   }
 }
 
