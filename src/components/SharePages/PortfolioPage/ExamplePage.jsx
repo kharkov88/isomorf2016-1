@@ -96,7 +96,8 @@ class ExamplePage extends Component {
   getData() {
     let {pathname, href} = this.state
     let arr = decodeURI(pathname).split('/')
-    let title = arr[arr.length - 1]
+    let title = (arr[arr.length - 1])
+    console.log(title)
     let categoryTitle = null
     let {category} = config
     let data = {}
@@ -106,8 +107,8 @@ class ExamplePage extends Component {
       return item.imgs.map(item => {
         if (item.title === title) {
           data = item
-          let a = categoryTitle.split('-').slice(0,2).join('-')
-          //console.log(a)
+          let a = categoryTitle
+          console.log(a)
           data.category = a
         }
       })
