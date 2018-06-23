@@ -73,7 +73,7 @@ const TabContent = (props) => {
 const Image = (props) => {
   let {title, href, url} = props
   return (
-    <Link to={url + '/' + title.toLowerCase()}>
+    <Link to={url + '/' + title}>
       <img src={href} />
       <span className='overlay'>
         <span className='sample-title'>

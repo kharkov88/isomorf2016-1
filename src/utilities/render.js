@@ -29,7 +29,7 @@ export default function (componentHTML, key) {
           <link rel="stylesheet" href="/assets/css/hover.css">
           <link rel="stylesheet" type="text/css" href="/assets/css/portfolio.css" />
           <link rel="stylesheet" type="text/css" href="/assets/css/portfolio-example.css" />
-          
+
           <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/icons/apple-icon-57x57.png">
           <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/icons/apple-icon-60x60.png">
           <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/icons/apple-icon-72x72.png">
@@ -43,21 +43,23 @@ export default function (componentHTML, key) {
           <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon-32x32.png">
           <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/icons/favicon-96x96.png">
           <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon-16x16.png">
-        
+
           <meta name="msapplication-TileColor" content="#ffffff">
           <meta name="msapplication-TileImage" content="/assets/img/icons/ms-icon-144x144.png">
           <meta name="theme-color" content="#ffffff">
-          
+
           <script src="/assets/js/portfolio/modernizr.custom.js"></script>
       </head>
 
       <body >
+      <!--
         <div id='preloader'>
           <img src='/assets/img/loader.gif'/>
         </div>
+      -->
         <div id='particles-js'> </div>
         <div id='react-view'>${componentHTML}</div>
-        
+
         <!-- SCRIPTS BG-1 -->
         <script src="/assets/js/bg-1/particles.js"></script>
         <script src="/assets/js/bg-1/app.js"></script>

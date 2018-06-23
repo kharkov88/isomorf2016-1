@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link, Route, Switch } from 'react-router-dom'
+import ReactGA from 'react-ga'
 
 import Footer from 'components/Footer'
 import Header from 'components/Header'
@@ -20,9 +21,21 @@ import './App.css'
 class App extends Component {
   componentDidMount () {
     let pre = document.querySelector('#preloader')
-    setTimeout(() => {
-      document.body.removeChild(pre)
-    }, 600)
+    if(pre) {
+      setTimeout(() => {
+        document.body.removeChild(pre)
+      }, 600)
+    }
+    ReactGA.initialize('UA-121315535-1', {
+      debug: true,
+      titleCase: false
+    })
+    ReactGA.event({
+      category: 'spa-mtcom',
+      action: 'view',
+      label: 'page:'+location.pathname,
+      nonInteraction: true
+    })
   }
   render () {
     return (
