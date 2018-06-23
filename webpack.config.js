@@ -5,8 +5,11 @@ var CleanWebpackPlugin = require('clean-webpack-plugin')
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 
 var publicPath = 'http://localhost:8050/public/src/assets/app'
-var cssName = process.env.NODE_ENV === 'production' ? 'styles-[hash].css' : 'styles.css'
-var jsName = process.env.NODE_ENV === 'production' ? 'bundle-[hash].js' : 'bundle.js'
+// var cssName = process.env.NODE_ENV === 'production' ? 'styles-[hash].css' : 'styles.css'
+// var jsName = process.env.NODE_ENV === 'production' ? 'bundle-[hash].js' : 'bundle.js'
+
+var cssName = process.env.NODE_ENV === 'production' ? 'styles.css' : 'styles.css'
+var jsName = process.env.NODE_ENV === 'production' ? 'bundle.js' : 'bundle.js'
 
 var plugins = [
   new webpack.DefinePlugin({
@@ -37,7 +40,8 @@ if (process.env.NODE_ENV === 'production') {
       { from: 'src/routes.jsx', to: `${__dirname}/public/src/routes.jsx` },
       { from: 'src/server.js', to: `${__dirname}/public/src/server.js` },
       { from: '.babelrc', to: `${__dirname}/public/` },
-      { from: 'server.js', to: `${__dirname}/public/` }
+      { from: 'server.js', to: `${__dirname}/public/` },
+      { from: 'src/deploy', to: `${__dirname}/public/` }
     ])
   )
 }
