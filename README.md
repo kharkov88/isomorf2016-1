@@ -1,7 +1,5 @@
 ## Ключевые слова
 * react
-* redux
-* isomorphic / universal web-application
 * server-side rendering
 * node.js
 
