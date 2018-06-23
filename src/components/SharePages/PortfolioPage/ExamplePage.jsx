@@ -14,7 +14,7 @@ function getLinks() {
     })
   })  
 }
-//console.log(links)
+console.log('links:',links)
 
 class ExamplePage extends Component {
   constructor (props) {
@@ -29,12 +29,16 @@ class ExamplePage extends Component {
   		pathname: location.pathname
   	})
     getLinks()
+    //let a = document.querySelectorAll('.navigation a')
+    //console.log('aaaaaaa:',a)
+    //a.forEach( item => item.classList.remove('bounceInLeft'))
   }
 
   render () {
-    let {pathname, href} = this.state
+    let {pathname} = this.state
     let data = this.getData()
-    console.log(data)
+    //console.log('pathname:', pathname)
+    console.log('data:', data)
 
     return (
       <div className='portfolio-example bg-1'>
@@ -94,9 +98,10 @@ class ExamplePage extends Component {
   }
 
   getData() {
-    let {pathname, href} = this.state
-    let arr = decodeURI(pathname).split('/')
-    let title = arr[arr.length - 1]
+    let {pathname} = this.state
+    let a = decodeURI(pathname).split('/')
+    let clientName = (a[a.length - 1])
+    console.log('client name:', clientName)
     let categoryTitle = null
     let {category} = config
     let data = {}
@@ -104,10 +109,10 @@ class ExamplePage extends Component {
     category.map(item => {
       categoryTitle = item.title
       return item.imgs.map(item => {
-        if (item.title === title) {
+        if (item.title === clientName) {
           data = item
-          let a = categoryTitle.split('-').slice(0,2).join('-')
-          //console.log(a)
+          let a = categoryTitle
+          console.log(a)
           data.category = a
         }
       })
@@ -116,6 +121,7 @@ class ExamplePage extends Component {
   }
 }
 const Navigator = (props) => {
+  console.log('props:', props)
   let current = links.includes(props.title) && links.indexOf(props.title)
   if (current === 0) {
     let href = document.querySelector('.prev-example a')
