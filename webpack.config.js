@@ -1,11 +1,10 @@
-global.Promise = require('bluebird')
-
 var webpack = require('webpack')
 var path = require('path')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var CleanWebpackPlugin = require('clean-webpack-plugin')
+var CopyWebpackPlugin = require('copy-webpack-plugin')
 
-var publicPath = 'http://localhost:8050/public/assets'
+var publicPath = 'http://localhost:8050/public/src/assets/app'
 var cssName = process.env.NODE_ENV === 'production' ? 'styles-[hash].css' : 'styles.css'
 var jsName = process.env.NODE_ENV === 'production' ? 'bundle-[hash].js' : 'bundle.js'
 
@@ -21,7 +20,7 @@ var plugins = [
 
 if (process.env.NODE_ENV === 'production') {
   plugins.push(
-    new CleanWebpackPlugin([ 'public/assets/' ], {
+    new CleanWebpackPlugin([ 'public/' ], {
       root: __dirname,
       verbose: true,
       dry: false
@@ -29,6 +28,18 @@ if (process.env.NODE_ENV === 'production') {
   )
   plugins.push(new webpack.optimize.DedupePlugin())
   plugins.push(new webpack.optimize.OccurenceOrderPlugin())
+  plugins.push(
+    new CopyWebpackPlugin([
+      { from: 'src/assets', to: `${__dirname}/public/src/assets` },
+      { from: 'src/components', to: `${__dirname}/public/src/components` },
+      { from: 'src/utilities', to: `${__dirname}/public/src/utilities` },
+      { from: 'src/configs', to: `${__dirname}/public/src/configs` },
+      { from: 'src/routes.jsx', to: `${__dirname}/public/src/routes.jsx` },
+      { from: 'src/server.js', to: `${__dirname}/public/src/server.js` },
+      { from: '.babelrc', to: `${__dirname}/public/` },
+      { from: 'server.js', to: `${__dirname}/public/` }
+    ])
+  )
 }
 
 module.exports = {
@@ -41,7 +52,7 @@ module.exports = {
   },
   plugins,
   output: {
-    path: `${__dirname}/public/assets/`,
+    path: `${__dirname}/public/src/assets/app/`,
     filename: jsName,
     publicPath
   },

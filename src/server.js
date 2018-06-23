@@ -35,7 +35,7 @@ app.post('/send-form/*', jsonParse, (req, res) => {
   sendmsg(req.body)
   setTimeout(() => {
     res.send('success!')
-  }, 2000)
+  }, 0)
 })
 
 const PORT = process.env.PORT || 3003

@@ -23,7 +23,7 @@ export default function (componentHTML, key) {
           <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
           <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
           <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,900" rel="stylesheet">
-          <link rel="stylesheet" href="${assetUrl}/public/assets/styles.css">
+          <link rel="stylesheet" href="${assetUrl}/public/src/assets/app/styles.css">
           <link rel="stylesheet" href="/assets/css/animate.css">
           <link rel="stylesheet" href="/assets/css/main.css">
           <link rel="stylesheet" href="/assets/css/hover.css">
@@ -71,7 +71,7 @@ export default function (componentHTML, key) {
         <script src="/assets/js/bg-2/three.min.js"></script>
 
         <!-- react-app -->
-        <script type="application/javascript" src="${assetUrl}/public/assets/bundle.js"></script>
+        <script type="application/javascript" src="${assetUrl}/public/src/assets/app/bundle.js"></script>
 
       </body>
     </html>

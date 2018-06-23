@@ -33,7 +33,7 @@ class App extends Component {
     ReactGA.event({
       category: 'spa-mtcom',
       action: 'view',
-      label: 'page:'+location.pathname,
+      label: 'path:'+location.pathname,
       nonInteraction: true
     })
   }
