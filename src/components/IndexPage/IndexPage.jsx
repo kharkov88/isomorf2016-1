@@ -12,7 +12,7 @@ class IndexPage extends Component {
     return (
       <div className='index-page bg-1'>
 
-        <Header />
+        <Header url={this.props.match.url} />
         <main className='container main'>
           <h1 className='animated zoomIn'>We make fast Google AMP pages</h1>
           <div className='description animated zoomIn'>

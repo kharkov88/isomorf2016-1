@@ -10,14 +10,14 @@ class Footer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      url: ROOT
+      url: this.props.url
     }
   }
 
   componentDidMount() {
     this.setState({
       url: location.pathname
-    }) 
+    })
   }
 
   render () {

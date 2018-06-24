@@ -38,6 +38,8 @@ class App extends Component {
     })
   }
   render () {
+    let { url } = this.props
+    console.log(this.props)
     return (
       <Switch>
         <Route exact path='/' component={IndexPage} />

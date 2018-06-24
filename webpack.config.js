@@ -40,8 +40,7 @@ if (process.env.NODE_ENV === 'production') {
       { from: 'src/routes.jsx', to: `${__dirname}/public/src/routes.jsx` },
       { from: 'src/server.js', to: `${__dirname}/public/src/server.js` },
       { from: '.babelrc', to: `${__dirname}/public/` },
-      { from: 'server.js', to: `${__dirname}/public/` },
-      { from: 'src/deploy', to: `${__dirname}/public/` }
+      { from: 'server.js', to: `${__dirname}/public/` }
     ])
   )
 }

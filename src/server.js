@@ -3,9 +3,7 @@ import bodyParser from 'body-parser'
 import React from 'react'
 import ReactDom from 'react-dom/server'
 import { StaticRouter } from 'react-router'
-import { Provider } from 'react-redux'
 
-import configureStore from 'redux/configureStore'
 import App from 'components/App'
 import sendmsg from 'utilities/sendmsg'
 import renderHTML from 'utilities/render'
@@ -23,7 +21,7 @@ app.get('/*', (req, res) => {
       location={req.url}
       context={context}
     >
-      <App />
+      <App url={req.url} />
     </StaticRouter>
   )
   res.end(renderHTML(componentHTML, req.url))

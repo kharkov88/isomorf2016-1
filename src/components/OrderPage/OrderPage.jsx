@@ -35,9 +35,10 @@ class OrderPage extends Component {
   }
   render () {
     let {url} = this.props.match
+
     return (
       <div className='order-page bg-2'>
-        <Header />
+        <Header url={url} />
         <main className='container main'>
           <CustomForm />
         </main>
